@@ -391,6 +391,7 @@ export const services: Service[] = [
     optionsNote: "Prices apply only to apartments in standard deep-cleaning condition and the confirmed standard scope. Villas, properties above three bedrooms, post-construction conditions, heavy grease, pest contamination and unusual residue require photographs, assessment and quotation.",
     optionsCtaLabel: "View Apartment Options",
     bookingFields: [
+      { name: "propertySize", label: "Approximate property size (sq ft)", type: "text" },
       { name: "apartmentCondition", label: "Property condition", type: "select", options: ["Standard", "Post-construction", "Heavy grease or dust", "Other"], required: true },
     ],
     villaBookingFields: [
