@@ -71,7 +71,10 @@ export default function SiteHeader() {
           aria-expanded={servicesOpen}
           onClick={() => setServicesOpen((open) => !open)}
         >
-          Services <span aria-hidden="true">⌄</span>
+          Services
+          <svg className="nav-chevron" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3.5 6l4.5 4.5L12.5 6" />
+          </svg>
         </button>
         {servicesOpen ? (
           <div className="nav-services-panel">

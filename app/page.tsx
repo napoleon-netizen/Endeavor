@@ -121,11 +121,11 @@ export default function Home() {
             <div className="hero-content">
               <div className="hero-blob">
                 <span className="page-eyebrow">A Tradition of Quality Cleaning</span>
-                <h1>Professional Cleaning for Healthier Homes and Businesses in Dubai</h1>
-                <p>From cleaner air and safer water to deeply refreshed living spaces, Endeavor delivers reliable cleaning solutions with professional care.</p>
+                <h1>Professional Cleaning Services in Dubai</h1>
+                <p>Cleaner spaces. Healthier environments. Certified cleaning for homes and businesses since 2014.</p>
                 <div className="hero-actions">
-                  <Link className="hero-cta" href="/services">View Services</Link>
-                  <Link className="hero-cta hero-cta--secondary" href="/book">Book a Service</Link>
+                  <Link className="hero-cta" href="/book?mode=quote">Get a Free Quote</Link>
+                  <a className="hero-cta hero-cta--secondary" href="https://wa.me/971588754060" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
                 </div>
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function Home() {
                 <span className="north-east" aria-hidden="true">↗</span>
               </div>
               <div className="air-details">
-                <div className="air-gauge"><span>12</span></div>
+                <div className="services-badge"><strong>12</strong><span>Services</span></div>
                 <div className="air-copy">
                   <strong>Browse all services</strong>
                   <p>Filter by space, surface or specialist cleaning need.</p>
@@ -150,7 +150,11 @@ export default function Home() {
               <img src="/assets/endeavor-hero.png" alt="A bright, professionally cleaned living room" />
               <div className="forest-copy">
                 <span className="plant-badge" aria-hidden="true">✦</span>
-                <div><strong>Need an exact quote?</strong><span>Tell us about your property and preferred time</span></div>
+                <div>
+                  <strong>Need an exact quote?</strong>
+                  <span>Tell us about your property and preferred time</span>
+                  <span className="forest-cta">Get a Free Quote →</span>
+                </div>
               </div>
             </Link>
           </aside>
