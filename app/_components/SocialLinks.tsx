@@ -32,18 +32,36 @@ function LinkedInIcon() {
   );
 }
 
-const platforms = [
-  { name: "Instagram", href: "#", Icon: InstagramIcon },
-  { name: "Facebook", href: "#", Icon: FacebookIcon },
-  { name: "TikTok", href: "#", Icon: TikTokIcon },
-  { name: "LinkedIn", href: "#", Icon: LinkedInIcon },
+function XIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
+      <path d="M17.6 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.1 21H2l7.3-8.3L1.7 3h6.4l4.4 5.9L17.6 3Zm-1.1 16.2h1.7L7.1 4.7H5.3l11.2 14.5Z" />
+    </svg>
+  );
+}
+
+function YouTubeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+      <path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5.2 3L10 15Z" />
+    </svg>
+  );
+}
+
+export const socialProfiles = [
+  { name: "Facebook", href: "https://www.facebook.com/Endeavorclean60", Icon: FacebookIcon },
+  { name: "Instagram", href: "https://www.instagram.com/endeavorcleaningservices/", Icon: InstagramIcon },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/endeavor-clean-b1353a1b6/", Icon: LinkedInIcon },
+  { name: "X", href: "https://x.com/CleanEndeavor", Icon: XIcon },
+  { name: "YouTube", href: "https://www.youtube.com/@EndeavorCleaningServices", Icon: YouTubeIcon },
+  { name: "TikTok", href: "https://www.tiktok.com/@endeavorclean", Icon: TikTokIcon },
 ];
 
 export default function SocialLinks({ className = "social-row" }: { className?: string }) {
   return (
     <div className={className}>
-      {platforms.map(({ name, href, Icon }) => (
-        <a href={href} key={name} aria-label={`Endeavor Cleaning on ${name}`}>
+      {socialProfiles.map(({ name, href, Icon }) => (
+        <a href={href} key={name} aria-label={`Endeavor Cleaning on ${name}`} target="_blank" rel="noopener noreferrer">
           <Icon />
         </a>
       ))}
