@@ -40,6 +40,7 @@ function WhatsAppIcon() {
 export default function SiteHeader() {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [packagesOpen, setPackagesOpen] = useState(false);
@@ -47,6 +48,17 @@ export default function SiteHeader() {
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const next = window.scrollY > 24;
+      setScrolled(next);
+      document.documentElement.toggleAttribute("data-scrolled", next);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const closeMenus = () => {
@@ -131,7 +143,7 @@ export default function SiteHeader() {
   );
 
   return (
-    <header className="site-header site-header--shared">
+    <header className={`site-header site-header--shared ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="header-shell">
         <Link className="brand" href="/" aria-label="Endeavor Cleaning home" onClick={() => setMobileOpen(false)}>
           <img src="/assets/endeavor-logo-v1.png" alt="Endeavor — A Tradition of Quality Cleaning" />

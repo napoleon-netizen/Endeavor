@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { services } from "@/lib/services";
+import HeroWipe from "./_components/HeroWipe";
 import SiteFrame from "./_components/SiteFrame";
 
 const partnerColumns = [
@@ -118,6 +119,7 @@ export default function Home() {
         <section className="hero-grid" aria-label="Endeavor Cleaning overview">
           <div className="hero-banner">
             <img src="/assets/endeavor-hero.png" alt="An Endeavor cleaning professional caring for a modern living room" />
+            <HeroWipe />
             <div className="hero-content">
               <div className="hero-blob">
                 <span className="page-eyebrow">A Tradition of Quality Cleaning</span>
