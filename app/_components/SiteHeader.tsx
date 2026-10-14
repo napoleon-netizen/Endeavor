@@ -51,14 +51,33 @@ export default function SiteHeader() {
   }, []);
 
   useEffect(() => {
-    const onScroll = () => {
-      const next = window.scrollY > 24;
+    // Hysteresis: shrink only after scrolling well past the amount the header
+    // shrinks by, and grow back only near the very top. Using a single
+    // threshold made the page bounce, because shrinking the header shortens
+    // the page and pulled the scroll position back under the threshold.
+    const SHRINK_AT = 96;
+    const EXPAND_AT = 8;
+    let current = false;
+    let frame = 0;
+
+    const apply = () => {
+      frame = 0;
+      const y = window.scrollY;
+      const next = current ? y > EXPAND_AT : y > SHRINK_AT;
+      if (next === current) return;
+      current = next;
       setScrolled(next);
       document.documentElement.toggleAttribute("data-scrolled", next);
     };
-    onScroll();
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(apply);
+    };
+    apply();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   const closeMenus = () => {
