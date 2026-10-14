@@ -138,7 +138,19 @@ export default function Home() {
                 <span className="north-east" aria-hidden="true">↗</span>
               </div>
               <div className="air-details">
-                <div className="services-badge"><strong>12</strong><span>Services</span></div>
+                <div className="services-mark" aria-label="12 services">
+                  <svg className="services-mark__bubbles" viewBox="0 0 220 150" aria-hidden="true">
+                    <circle cx="26" cy="38" r="12" fill="none" stroke="var(--navy)" strokeWidth="2" />
+                    <circle cx="52" cy="112" r="6" fill="none" stroke="var(--navy)" strokeWidth="2" />
+                    <circle cx="190" cy="26" r="10" fill="none" stroke="var(--rust)" strokeWidth="2" />
+                    <circle cx="202" cy="68" r="5" fill="var(--rust)" />
+                    <circle cx="172" cy="118" r="8" fill="none" stroke="var(--navy)" strokeWidth="2" />
+                    <circle cx="44" cy="78" r="3.5" fill="var(--navy)" />
+                    <circle cx="206" cy="128" r="3" fill="var(--navy)" />
+                  </svg>
+                  <strong>12</strong>
+                  <span>Services</span>
+                </div>
                 <div className="air-copy">
                   <strong>Browse all services</strong>
                   <p>Filter by space, surface or specialist cleaning need.</p>
