@@ -505,7 +505,8 @@ a {
 }
 
 .air-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   padding: 19px 25px 16px;
   background: var(--cream);
 }
@@ -533,36 +534,50 @@ a {
 }
 
 .air-details {
+  flex: 1;
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 18px;
-  margin: 19px 14px 0 23px;
+  gap: 22px;
+  margin: 8px 8px 0 4px;
 }
 
-.services-badge {
+.services-mark {
+  position: relative;
   flex: 0 0 auto;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 10px;
-  padding: 16px 22px;
-  border-radius: 16px;
-  white-space: nowrap;
-  background: var(--navy);
-  color: #fff;
-  box-shadow: 0 10px 24px rgba(26, 24, 82, .18);
+  width: 220px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
 }
 
-.services-badge strong {
-  font-size: 40px;
-  line-height: 1;
+.services-mark__bubbles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.services-mark strong {
+  position: relative;
+  font-size: 72px;
+  line-height: .9;
   font-weight: 900;
+  letter-spacing: -2px;
 }
 
-.services-badge span {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: .3px;
+.services-mark span {
+  position: relative;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--rust);
 }
 
 .air-copy strong {
@@ -3149,8 +3164,9 @@ a {
   .brand img { width: 150px; }
   .nav-actions { gap: 8px; }
   .air-details { grid-template-columns: auto 1fr; margin-left: 0; gap: 12px; }
-  .services-badge { padding: 12px 18px; }
-  .services-badge strong { font-size: 32px; }
+  .services-mark { width: 170px; min-height: 120px; }
+  .services-mark strong { font-size: 56px; }
+  .services-mark span { font-size: 11px; letter-spacing: 3px; }
   .air-copy p { font-size: 15px; }
   .forest-copy { left: 17px; }
   .plant-badge { width: 56px; height: 56px; }
