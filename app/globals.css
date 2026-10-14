@@ -53,11 +53,20 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  height: 176px;
+  height: 128px;
   border-bottom: 1px solid rgb(26 24 82 / 8%);
   background: rgb(255 255 255 / 96%);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
+  transition: height .28s ease, background-color .28s ease, box-shadow .28s ease;
+}
+
+.site-header--scrolled {
+  height: 84px;
+  background: rgb(255 255 255 / 62%);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
+  box-shadow: 0 8px 28px rgb(26 24 82 / 8%);
 }
 
 .header-shell,
@@ -72,21 +81,25 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  padding-top: 26px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  width: 300px;
-  height: 98px;
+  width: 260px;
+  height: 84px;
 }
 
 .brand img {
   display: block;
-  width: 300px;
+  width: 260px;
   height: auto;
+  transition: width .28s ease;
+}
+
+.site-header--scrolled .brand img {
+  width: 190px;
 }
 
 .primary-nav {
@@ -2973,9 +2986,11 @@ a {
 
 @media (max-width: 1400px) {
   .hero-cta--secondary { display: none; }
-  .site-header { height: 122px; }
+  .site-header { height: 96px; }
+  .site-header--scrolled { height: 72px; }
   .header-shell { display: grid; grid-template-columns: 1fr auto auto; align-items: center; padding-top: 0; }
-  .brand { height: 90px; }
+  .brand { height: 72px; }
+  .site-header--scrolled .brand img { width: 170px; }
   .brand { width: 220px; }
   .brand img { width: 220px; }
   .mobile-toggle {
@@ -3007,7 +3022,7 @@ a {
     display: none;
     position: fixed;
     z-index: 40;
-    top: 122px;
+    top: 96px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -3019,6 +3034,7 @@ a {
     background: #fff;
   }
   .mobile-nav-overlay--open { display: flex; }
+  html[data-scrolled] .mobile-nav-overlay { top: 72px; }
   .nav-link { display: block; width: 100%; padding: 13px; text-align: left; font-size: 18px; }
   .nav-link--active { box-shadow: none; }
   .nav-link--service { display: flex; justify-content: space-between; }
@@ -3162,6 +3178,7 @@ a {
 @media (max-width: 480px) {
   .brand { width: 150px; }
   .brand img { width: 150px; }
+  .site-header--scrolled .brand img { width: 130px; }
   .nav-actions { gap: 8px; }
   .air-details { grid-template-columns: auto 1fr; margin-left: 0; gap: 12px; }
   .services-mark { width: 170px; min-height: 120px; }

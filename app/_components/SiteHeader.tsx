@@ -40,6 +40,7 @@ function WhatsAppIcon() {
 export default function SiteHeader() {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [packagesOpen, setPackagesOpen] = useState(false);
@@ -47,6 +48,36 @@ export default function SiteHeader() {
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    // Hysteresis: shrink only after scrolling well past the amount the header
+    // shrinks by, and grow back only near the very top. Using a single
+    // threshold made the page bounce, because shrinking the header shortens
+    // the page and pulled the scroll position back under the threshold.
+    const SHRINK_AT = 96;
+    const EXPAND_AT = 8;
+    let current = false;
+    let frame = 0;
+
+    const apply = () => {
+      frame = 0;
+      const y = window.scrollY;
+      const next = current ? y > EXPAND_AT : y > SHRINK_AT;
+      if (next === current) return;
+      current = next;
+      setScrolled(next);
+      document.documentElement.toggleAttribute("data-scrolled", next);
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(apply);
+    };
+    apply();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   const closeMenus = () => {
@@ -131,7 +162,7 @@ export default function SiteHeader() {
   );
 
   return (
-    <header className="site-header site-header--shared">
+    <header className={`site-header site-header--shared ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="header-shell">
         <Link className="brand" href="/" aria-label="Endeavor Cleaning home" onClick={() => setMobileOpen(false)}>
           <img src="/assets/endeavor-logo-v1.png" alt="Endeavor — A Tradition of Quality Cleaning" />
