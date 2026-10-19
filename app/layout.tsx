@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://endeavorclean.com"),
+  alternates: { canonical: "/", languages: { en: "/", ar: "/ar" } },
   title: "Endeavor | A Tradition of Quality Cleaning",
   description: "Professional residential and commercial cleaning with a tradition of quality care.",
   icons: {

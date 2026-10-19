@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import SiteFrame from "@/app/_components/SiteFrame";
 import { getService, services } from "@/lib/services";
+import ConcernIcon from "@/app/_components/ConcernIcon";
 import PackageOptions from "./PackageOptions";
 
 type ServicePageProps = {
@@ -86,8 +87,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
         <section className="service-concerns-band" aria-label={`Reasons to consider ${service.name}`}>
           <div className="inner-shell">
-            {service.concerns.map((concern, index) => (
-              <div key={concern}><span>{String(index + 1).padStart(2, "0")}</span><strong>{concern}</strong></div>
+            {service.concerns.map((concern) => (
+              <div key={concern}><ConcernIcon label={concern} /><strong>{concern}</strong></div>
             ))}
           </div>
           {service.limitations ? <p className="inner-shell service-limitations-note">{service.limitations}</p> : null}
@@ -218,8 +219,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <h2>{service.steps.length} steps from request to handover</h2>
             </div>
             <ol className="service-process-grid">
-              {service.steps.map((step, index) => (
-                <li key={step}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step}</h3></li>
+              {service.steps.map((step) => (
+                <li key={step}><ConcernIcon label={step} /><h3>{step}</h3></li>
               ))}
             </ol>
           </div>
