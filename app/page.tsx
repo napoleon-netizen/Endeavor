@@ -7,19 +7,19 @@ const partnerColumns = [
   {
     name: "Residential Cleaning",
     copy: "Detailed services for apartments and villas, from focused furniture care to complete property cleaning.",
-    image: "/assets/residential.png",
+    image: "/assets/photos/deep-covering-sm.webp",
     href: "/services?category=property-cleaning",
   },
   {
     name: "Commercial Cleaning",
     copy: "Planned cleaning for offices, facilities and customer-facing spaces around access and operating needs.",
-    image: "/assets/commercial.png",
+    image: "/assets/photos/glass-partition-sm.webp",
     href: "/contact",
   },
   {
     name: "Specialist Services",
     copy: "AC systems, water tanks, façades, marble and other work that needs a clearly defined scope.",
-    image: "/assets/forest.webp",
+    image: "/assets/photos/tank-rooftop-sm.webp",
     href: "/services",
   },
 ];
@@ -28,35 +28,35 @@ const popularServices = [
   {
     name: "AC Cleaning",
     copy: "Compare Endeavor service levels and request the right option for each AC unit.",
-    image: "/assets/ac.png",
+    image: "/assets/photos/ac-duct-hose-sm.webp",
     icon: "air",
     href: "/services/ac-cleaning",
   },
   {
     name: "Water Tank Cleaning",
     copy: "Arrange tank cleaning around capacity, tank type, property and access conditions.",
-    image: "/assets/tanker-cleaning.png",
+    image: "/assets/photos/tank-rooftop-sm.webp",
     icon: "water",
     href: "/services/water-tank-cleaning",
   },
   {
     name: "Specialized Deep Cleaning",
     copy: "Build a room-by-room cleaning plan around property size, furnishing and condition.",
-    image: "/assets/popular-deep-cleaning.jpg",
+    image: "/assets/photos/kitchen-hob-sm.webp",
     icon: "spray",
     href: "/services/specialized-deep-cleaning",
   },
   {
     name: "Move-In/Move-Out Cleaning",
     copy: "Prepare a property for arrival or handover with an agreed cleaning checklist.",
-    image: "/assets/popular-move-in-out.jpg",
+    image: "/assets/photos/deep-sheeting-sm.webp",
     icon: "box",
     href: "/services/move-in-move-out-cleaning",
   },
   {
     name: "Carpet Cleaning",
     copy: "Choose a suitable approach for fitted carpet or loose rugs based on material and area.",
-    image: "/assets/mat.jpg",
+    image: "/assets/photos/carpet-machine-sm.webp",
     icon: "sofa",
     href: "/services/carpet-cleaning",
   },
@@ -117,7 +117,7 @@ export default function Home() {
       <div className="content-shell">
         <section className="hero-grid" aria-label="Endeavor Cleaning overview">
           <div className="hero-banner">
-            <img src="/assets/endeavor-hero.png" alt="An Endeavor cleaning professional caring for a modern living room" />
+            <img src="/assets/photos/team-arrival.webp" alt="The Endeavor Cleaning team arriving at a Dubai villa with professional equipment" fetchPriority="high" />
             <div className="hero-content">
               <div className="hero-blob">
                 <span className="page-eyebrow">A Tradition of Quality Cleaning</span>
@@ -159,7 +159,7 @@ export default function Home() {
             </Link>
 
             <Link className="forest-card" href="/book?mode=quote">
-              <img src="/assets/endeavor-hero.png" alt="A bright, professionally cleaned living room" />
+              <img src="/assets/photos/team-lounge.webp" alt="Endeavor technicians deep cleaning a Dubai living room" loading="lazy" />
               <div className="forest-copy">
                 <span className="plant-badge" aria-hidden="true">✦</span>
                 <div>

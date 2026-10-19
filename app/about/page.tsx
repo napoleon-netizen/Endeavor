@@ -30,7 +30,7 @@ export default function AboutPage() {
                 <Link className="outline-action" href="/contact">Contact the Team</Link>
               </div>
             </div>
-            <img src="/assets/endeavor-hero.png" alt="Endeavor Cleaning team serving a Dubai property" />
+            <img src="/assets/photos/team-lounge.webp" alt="The Endeavor Cleaning team at work in a Dubai home" />
           </div>
         </section>
 
@@ -48,7 +48,7 @@ export default function AboutPage() {
 
         <section className="inner-section about-story-section">
           <div className="inner-shell about-story-grid">
-            <div><img src="/assets/hero.webp" alt="A bright, professionally cared-for living space" /></div>
+            <div><img src="/assets/photos/deep-covering.webp" alt="Endeavor technicians protecting furniture before a deep clean" loading="lazy" /></div>
             <div>
               <span className="page-eyebrow">Homes and businesses</span>
               <h2>One clear journey, adapted to each service</h2>
