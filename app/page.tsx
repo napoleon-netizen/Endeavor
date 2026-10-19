@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { services } from "@/lib/services";
 import SiteFrame from "./_components/SiteFrame";
+import Clients from "./_components/Clients";
 import ServiceAreas from "./_components/ServiceAreas";
 import Testimonials from "./_components/Testimonials";
 
@@ -30,7 +31,7 @@ const popularServices = [
   {
     name: "AC Cleaning",
     copy: "Compare Endeavor service levels and request the right option for each AC unit.",
-    image: "/assets/photos/ac-grille-install-sm.webp",
+    image: "/assets/photos/ac-duct-hose-sm.webp",
     icon: "air",
     href: "/services/ac-cleaning",
   },
@@ -117,7 +118,7 @@ export default function Home() {
   return (
     <SiteFrame>
       <section className="hero-full" aria-label="Endeavor Cleaning overview">
-        <img src="/assets/photos/team-lounge.webp" alt="The Endeavor Cleaning team deep cleaning a Dubai living room" fetchPriority="high" />
+        <img src="/assets/photos/ac-grille-install.webp" alt="Endeavor technicians refitting a cleaned AC grille in a Dubai villa" fetchPriority="high" />
         <div className="hero-full__shade" aria-hidden="true" />
         <div className="content-shell hero-full__content">
           <span className="page-eyebrow page-eyebrow--light">A Tradition of Quality Cleaning</span>
@@ -215,6 +216,8 @@ export default function Home() {
       </div>
 
       <Testimonials />
+
+      <Clients />
 
       <div className="content-shell">
         <section className="partner-section" id="services" aria-label="Endeavor cleaning categories">

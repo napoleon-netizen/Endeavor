@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import Clients from "../_components/Clients";
 import ConcernIcon from "../_components/ConcernIcon";
 import SiteFrame from "../_components/SiteFrame";
 
@@ -63,6 +64,8 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        <Clients compact />
       </main>
     </SiteFrame>
   );
