@@ -30,7 +30,7 @@ export default function AboutPage() {
                 <Link className="outline-action" href="/contact">Contact the Team</Link>
               </div>
             </div>
-            <img src="/assets/photos/team-lounge.webp" alt="The Endeavor Cleaning team at work in a Dubai home" />
+            <img src="/assets/photos/team-arrival.webp" alt="The Endeavor Cleaning team arriving on site in Dubai" />
           </div>
         </section>
 

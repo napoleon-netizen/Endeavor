@@ -599,7 +599,7 @@ export const services: Service[] = [
     summary: "Deep-clean mattresses to reduce accumulated dust, everyday dirt and treatable marks, using a method suitable for the mattress material and condition.",
     cardCopy: "Detailed mattress care with the method confirmed before work begins.",
     icon: "/assets/mattress.webp",
-    image: "/assets/photos/mattress-nozzle.webp",
+    image: "/assets/photos/sofa-nozzle.webp",
     priceNote: "Prices from AED 150",
     quoteOnly: false,
     secondaryHeroCta: { label: "Book Mattress Cleaning", href: "/book?service=mattress-cleaning&mode=booking" },

@@ -13,8 +13,8 @@ const partnerColumns = [
   {
     name: "Commercial Cleaning",
     copy: "Planned cleaning for offices, facilities and customer-facing spaces around access and operating needs.",
-    image: "/assets/photos/glass-partition-sm.webp",
-    href: "/contact",
+    image: "/assets/photos/commercial-parking-sm.webp",
+    href: "/commercial",
   },
   {
     name: "Specialist Services",
@@ -114,24 +114,28 @@ function PopularIcon({ kind }: { kind: (typeof popularServices)[number]["icon"] 
 export default function Home() {
   return (
     <SiteFrame>
-      <div className="content-shell">
-        <section className="hero-grid" aria-label="Endeavor Cleaning overview">
-          <div className="hero-banner">
-            <img src="/assets/photos/team-arrival.webp" alt="The Endeavor Cleaning team arriving at a Dubai villa with professional equipment" fetchPriority="high" />
-            <div className="hero-content">
-              <div className="hero-blob">
-                <span className="page-eyebrow">A Tradition of Quality Cleaning</span>
-                <h1>Professional Cleaning Services in Dubai</h1>
-                <p>Cleaner spaces. Healthier environments. Certified cleaning for homes and businesses since 2014.</p>
-                <div className="hero-actions">
-                  <Link className="hero-cta" href="/book?mode=quote">Get a Free Quote</Link>
-                  <a className="hero-cta hero-cta--secondary" href="https://wa.me/971588754060" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
-                </div>
-              </div>
-            </div>
+      <section className="hero-full" aria-label="Endeavor Cleaning overview">
+        <img src="/assets/photos/team-lounge.webp" alt="The Endeavor Cleaning team deep cleaning a Dubai living room" fetchPriority="high" />
+        <div className="hero-full__shade" aria-hidden="true" />
+        <div className="content-shell hero-full__content">
+          <span className="page-eyebrow page-eyebrow--light">A Tradition of Quality Cleaning</span>
+          <h1>Professional Cleaning Services in <em>Dubai</em></h1>
+          <p>Cleaner spaces. Healthier environments. Certified cleaning for homes and businesses since 2014.</p>
+          <div className="hero-actions">
+            <Link className="hero-cta" href="/book?mode=quote">Get a Free Quote</Link>
+            <a className="hero-cta hero-cta--secondary" href="https://wa.me/971588754060" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
           </div>
+          <ul className="hero-trust" aria-label="Why Endeavor">
+            <li>Since 2014</li>
+            <li>ISO 9001 · 14001 · 45001</li>
+            <li>Dubai Municipality approved</li>
+            <li>Trained &amp; insured team</li>
+          </ul>
+        </div>
+      </section>
 
-          <aside className="side-panels" aria-label="Endeavor service information">
+      <div className="content-shell">
+        <section className="side-panels side-panels--row" aria-label="Endeavor service information">
             <Link className="air-card" href="/services">
               <div className="panel-title-row">
                 <h2>What can we clean for you?</h2>
@@ -159,7 +163,7 @@ export default function Home() {
             </Link>
 
             <Link className="forest-card" href="/book?mode=quote">
-              <img src="/assets/photos/team-lounge.webp" alt="Endeavor technicians deep cleaning a Dubai living room" loading="lazy" />
+              <img src="/assets/photos/team-arrival.webp" alt="The Endeavor team arriving at a Dubai villa with professional equipment" loading="lazy" />
               <div className="forest-copy">
                 <span className="plant-badge" aria-hidden="true">✦</span>
                 <div>
@@ -169,7 +173,6 @@ export default function Home() {
                 </div>
               </div>
             </Link>
-          </aside>
         </section>
 
         <section className="popular-section" aria-label="Popular cleaning services">
