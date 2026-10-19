@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import ConcernIcon from "../_components/ConcernIcon";
 import SiteFrame from "../_components/SiteFrame";
 
 export const metadata: Metadata = {
@@ -60,8 +61,8 @@ export default function CommercialPage() {
             <h2>Spaces we clean for businesses and buildings</h2>
           </div>
           <div className="principle-grid">
-            {spaces.map(([title, copy], index) => (
-              <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>
+            {spaces.map(([title, copy]) => (
+              <article key={title}><ConcernIcon label={title} /><h3>{title}</h3><p>{copy}</p></article>
             ))}
           </div>
         </section>

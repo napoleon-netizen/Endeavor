@@ -219,8 +219,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <h2>{service.steps.length} steps from request to handover</h2>
             </div>
             <ol className="service-process-grid">
-              {service.steps.map((step, index) => (
-                <li key={step}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step}</h3></li>
+              {service.steps.map((step) => (
+                <li key={step}><ConcernIcon label={step} /><h3>{step}</h3></li>
               ))}
             </ol>
           </div>

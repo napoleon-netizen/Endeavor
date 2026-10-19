@@ -1,8 +1,13 @@
 type Kind =
   | "dust" | "filter" | "odour" | "airflow" | "water" | "time" | "renovation"
-  | "stain" | "pet" | "move" | "shine" | "glass" | "building" | "default";
+  | "stain" | "pet" | "move" | "shine" | "glass" | "building"
+  | "chat" | "calendar" | "team" | "check" | "default";
 
 const rules: Array<[RegExp, Kind]> = [
+  [/request|enquir|quote|whatsapp|call|contact|tell us|share|send|choose|select|compare/i, "chat"],
+  [/confirm|schedul|appointment|book|date|agreed|plan/i, "calendar"],
+  [/arriv|team|technician|site visit|on site|prepare the|protect/i, "team"],
+  [/handover|complet|inspect|walk-?through|review|final|sign|quality|clear before|details that/i, "check"],
   [/vent|airflow|air flow|coil/i, "airflow"],
   [/filter|grease|hood|duct/i, "filter"],
   [/odour|odor|smell|musty/i, "odour"],
@@ -37,7 +42,11 @@ const paths: Record<Kind, React.ReactNode> = {
   shine: <><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" /><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16Z" /></>,
   glass: <><rect x="4" y="4" width="16" height="16" rx="1.5" /><path d="M12 4v16M4 12h16" /><path d="M7 7l2 2" /></>,
   building: <><rect x="4" y="3" width="16" height="18" rx="1.5" /><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2M10 21v-3h4v3" /></>,
-  default: <><circle cx="12" cy="12" r="8.5" /><path d="M8.5 12.5l2.3 2.3 4.7-5" /></>,
+  chat: <><path d="M4 5h16v11H9l-5 4V5Z" /><path d="M8 9h8M8 12h5" /></>,
+  calendar: <><rect x="3.5" y="5" width="17" height="15" rx="2" /><path d="M3.5 10h17M8 3v4M16 3v4" /><path d="M9 14.5l2 2 4-4" /></>,
+  team: <><path d="M3 16V8h11v8H3Z" /><path d="M14 11h4l3 3v2h-7" /><circle cx="7" cy="18" r="2" /><circle cx="17" cy="18" r="2" /></>,
+  check: <><circle cx="12" cy="12" r="8.5" /><path d="M8.5 12.5l2.3 2.3 4.7-5" /></>,
+  default: <><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" /></>,
 };
 
 export default function ConcernIcon({ label }: { label: string }) {

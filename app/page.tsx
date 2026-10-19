@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { services } from "@/lib/services";
 import SiteFrame from "./_components/SiteFrame";
+import ServiceAreas from "./_components/ServiceAreas";
 import Testimonials from "./_components/Testimonials";
 
 const partnerColumns = [
@@ -29,7 +30,7 @@ const popularServices = [
   {
     name: "AC Cleaning",
     copy: "Compare Endeavor service levels and request the right option for each AC unit.",
-    image: "/assets/photos/ac-duct-hose-sm.webp",
+    image: "/assets/photos/ac-grille-install-sm.webp",
     icon: "air",
     href: "/services/ac-cleaning",
   },
@@ -159,7 +160,7 @@ export default function Home() {
             </div>
 
             <Link className="forest-card" href="/book?mode=quote">
-              <img src="/assets/photos/team-arrival.webp" alt="The Endeavor team arriving at a Dubai villa with professional equipment" loading="lazy" />
+              <img src="/assets/photos/quote-card.webp" alt="The Endeavor team arriving at a Dubai villa with professional equipment" loading="lazy" />
               <div className="forest-copy">
                 <span className="plant-badge" aria-hidden="true">✦</span>
                 <div>
@@ -236,6 +237,8 @@ export default function Home() {
           </div>
         </section>
       </div>
+
+      <ServiceAreas />
     </SiteFrame>
   );
 }

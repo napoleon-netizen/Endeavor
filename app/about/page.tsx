@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import ConcernIcon from "../_components/ConcernIcon";
 import SiteFrame from "../_components/SiteFrame";
 
 export const metadata: Metadata = {
@@ -40,8 +41,8 @@ export default function AboutPage() {
             <h2>Simple principles for a smoother service</h2>
           </div>
           <div className="principle-grid">
-            {principles.map(([title, copy], index) => (
-              <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{copy}</p></article>
+            {principles.map(([title, copy]) => (
+              <article key={title}><ConcernIcon label={title} /><h3>{title}</h3><p>{copy}</p></article>
             ))}
           </div>
         </section>
