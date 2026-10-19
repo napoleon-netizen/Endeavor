@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { services } from "@/lib/services";
 import SiteFrame from "./_components/SiteFrame";
+import Testimonials from "./_components/Testimonials";
 
 const partnerColumns = [
   {
@@ -126,6 +127,7 @@ export default function Home() {
             <a className="hero-cta hero-cta--secondary" href="https://wa.me/971588754060" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
           </div>
           <ul className="hero-trust" aria-label="Why Endeavor">
+            <li>4.8 ★ on Google · 480 reviews</li>
             <li>Since 2014</li>
             <li>ISO 9001 · 14001 · 45001</li>
             <li>Dubai Municipality approved</li>
@@ -136,31 +138,25 @@ export default function Home() {
 
       <div className="content-shell">
         <section className="side-panels side-panels--row" aria-label="Endeavor service information">
-            <Link className="air-card" href="/services">
+            <div className="finder-card">
               <div className="panel-title-row">
-                <h2>What can we clean for you?</h2>
-                <span className="north-east" aria-hidden="true">↗</span>
-              </div>
-              <div className="air-details">
-                <div className="services-mark" aria-label="12 services">
-                  <svg className="services-mark__bubbles" viewBox="0 0 220 150" aria-hidden="true">
-                    <circle cx="26" cy="38" r="12" fill="none" stroke="var(--navy)" strokeWidth="2" />
-                    <circle cx="52" cy="112" r="6" fill="none" stroke="var(--navy)" strokeWidth="2" />
-                    <circle cx="190" cy="26" r="10" fill="none" stroke="var(--rust)" strokeWidth="2" />
-                    <circle cx="202" cy="68" r="5" fill="var(--rust)" />
-                    <circle cx="172" cy="118" r="8" fill="none" stroke="var(--navy)" strokeWidth="2" />
-                    <circle cx="44" cy="78" r="3.5" fill="var(--navy)" />
-                    <circle cx="206" cy="128" r="3" fill="var(--navy)" />
-                  </svg>
-                  <strong>12</strong>
-                  <span>Services</span>
+                <div>
+                  <h2>What can we clean for you?</h2>
+                  <p className="finder-card__sub">Tap a service to see options and prices.</p>
                 </div>
-                <div className="air-copy">
-                  <strong>Browse all services</strong>
-                  <p>Filter by space, surface or specialist cleaning need.</p>
-                </div>
+                <Link className="finder-card__all" href="/services">All 12 →</Link>
               </div>
-            </Link>
+              <ul className="finder-grid">
+                {services.map((service) => (
+                  <li key={service.slug}>
+                    <Link href={`/services/${service.slug}`}>
+                      <span className="finder-tile__icon"><img src={service.icon} alt="" loading="lazy" /></span>
+                      <span className="finder-tile__label">{service.shortName}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             <Link className="forest-card" href="/book?mode=quote">
               <img src="/assets/photos/team-arrival.webp" alt="The Endeavor team arriving at a Dubai villa with professional equipment" loading="lazy" />
@@ -215,6 +211,11 @@ export default function Home() {
           </div>
         </section>
 
+      </div>
+
+      <Testimonials />
+
+      <div className="content-shell">
         <section className="partner-section" id="services" aria-label="Endeavor cleaning categories">
           <div className="section-heading-row">
             <div>
