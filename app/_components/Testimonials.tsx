@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import type { Locale } from "@/lib/i18n";
+import { ui } from "@/lib/i18n";
 import { googleRating, reviews } from "@/lib/reviews";
 
 function Stars({ size = 18 }: { size?: number }) {
@@ -23,24 +25,25 @@ function GoogleG() {
   );
 }
 
-export default function Testimonials() {
+export default function Testimonials({ locale = "en" }: { locale?: Locale }) {
+  const t = ui[locale];
   return (
     <section className="testimonials" aria-label="Customer reviews">
       <div className="content-shell testimonials__grid">
         <aside className="rating-panel">
-          <span className="section-kicker section-kicker--light">Testimonials</span>
-          <h2>Trusted by families and businesses across Dubai</h2>
+          <span className="section-kicker section-kicker--light">{t.testimonialsKicker}</span>
+          <h2>{t.testimonialsTitle}</h2>
           <div className="rating-panel__score">
             <strong>{googleRating.score}</strong>
             <div>
               <Stars size={22} />
-              <span>{googleRating.count} Google reviews</span>
+              <span>{googleRating.count} {t.googleReviews}</span>
             </div>
           </div>
           <a className="rating-panel__google" href="https://www.google.com/search?q=Endeavor+Cleaning+Services+Dubai+reviews" target="_blank" rel="noopener noreferrer">
-            <GoogleG /> Read our reviews on Google
+            <GoogleG /> {t.readOnGoogle}
           </a>
-          <p className="rating-panel__note">Every review is published exactly as our customers wrote it. <Link href="/reviews">More →</Link></p>
+          <p className="rating-panel__note">{t.reviewsNote} <Link href="/reviews">{t.more}</Link></p>
         </aside>
 
         <div className="review-grid">
@@ -48,10 +51,10 @@ export default function Testimonials() {
             <figure className={`review-card review-card--${index % 2 ? "b" : "a"}`} key={review.name}>
               <span className="review-card__mark" aria-hidden="true">“</span>
               <Stars />
-              <blockquote>{review.quote}</blockquote>
+              <blockquote lang="en" dir="ltr">{review.quote}</blockquote>
               <figcaption>
                 <span className="review-avatar" aria-hidden="true">{review.name.charAt(0)}</span>
-                <div><strong>{review.name}</strong><small>{review.service} · Google review</small></div>
+                <div><strong>{review.name}</strong><small>{review.service} · {t.googleReview}</small></div>
               </figcaption>
             </figure>
           ))}

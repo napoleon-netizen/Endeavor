@@ -1,16 +1,19 @@
 import { clients } from "@/lib/clients";
+import type { Locale } from "@/lib/i18n";
+import { ui } from "@/lib/i18n";
 
-export default function Clients({ compact = false }: { compact?: boolean }) {
+export default function Clients({ compact = false, locale = "en" }: { compact?: boolean; locale?: Locale }) {
+  const t = ui[locale];
   const items = [...clients, ...clients]; // doubled for a seamless loop
   return (
     <section className={`clients ${compact ? "clients--compact" : ""}`} aria-label="Our clients">
       <div className="content-shell">
         <div className="section-heading-row">
           <div>
-            <span className="section-kicker">Our clients</span>
-            <h2 className="section-heading">Preferred by Dubai's top companies and communities</h2>
+            <span className="section-kicker">{t.clientsKicker}</span>
+            <h2 className="section-heading">{t.clientsTitle}</h2>
           </div>
-          <p className="clients__blurb">Relied on by businesses, property managers and homeowners across Dubai since 2014.</p>
+          <p className="clients__blurb">{t.clientsBlurb}</p>
         </div>
       </div>
       <div className="clients__track" role="list">

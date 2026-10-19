@@ -6,14 +6,10 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { getService, services } from "@/lib/services";
+import { arServices, localeFromPath, ui } from "@/lib/i18n";
 
 const acCleaning = getService("ac-cleaning");
 
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Contact Us", href: "/contact" },
-];
 
 function Chevron() {
   return <span className="chevron" aria-hidden="true" />;
@@ -39,6 +35,13 @@ function WhatsAppIcon() {
 
 export default function SiteHeader() {
   const pathname = usePathname();
+  const locale = localeFromPath(pathname);
+  const t = ui[locale];
+  const homeHref = locale === "ar" ? "/ar" : "/";
+  const navLinks = [
+    { label: t.about, href: "/about" },
+    { label: t.contact, href: "/contact" },
+  ];
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -88,7 +91,7 @@ export default function SiteHeader() {
 
   const navContent = (
     <>
-      <Link className={`nav-link ${pathname === "/" ? "nav-link--active" : ""}`} href="/" onClick={() => setMobileOpen(false)}>Home</Link>
+      <Link className={`nav-link ${pathname === homeHref ? "nav-link--active" : ""}`} href={homeHref} onClick={() => setMobileOpen(false)}>{t.home}</Link>
 
       <div
         className="nav-services-dropdown"
@@ -102,7 +105,7 @@ export default function SiteHeader() {
           aria-expanded={servicesOpen}
           onClick={() => setServicesOpen((open) => !open)}
         >
-          Services
+          {t.services}
           <svg className="nav-chevron" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M3.5 6l4.5 4.5L12.5 6" />
           </svg>
@@ -117,7 +120,7 @@ export default function SiteHeader() {
                   onMouseLeave={() => setPackagesOpen(false)}
                 >
                   <Link href="/services/ac-cleaning#options" onClick={closeMenus}>
-                    <span>Packages &amp; Contracts</span>
+                    <span>{t.packages}</span>
                     <Chevron />
                   </Link>
                   {packagesOpen ? (
@@ -138,7 +141,7 @@ export default function SiteHeader() {
               {services.map((service) => (
                 <div className="nav-services-category" key={service.slug}>
                   <Link href={`/services/${service.slug}`} onClick={closeMenus}>
-                    <span>{service.name}</span>
+                    <span>{locale === "ar" ? arServices[service.slug]?.name ?? service.name : service.name}</span>
                     <Chevron />
                   </Link>
                 </div>
@@ -148,7 +151,7 @@ export default function SiteHeader() {
         ) : null}
       </div>
 
-      {navLinks.slice(1).map((link) => (
+      {navLinks.map((link) => (
         <Link
           className={`nav-link ${pathname === link.href ? "nav-link--active" : ""}`}
           href={link.href}
@@ -164,7 +167,7 @@ export default function SiteHeader() {
   return (
     <header className={`site-header site-header--shared ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="header-shell">
-        <Link className="brand" href="/" aria-label="Endeavor Cleaning home" onClick={() => setMobileOpen(false)}>
+        <Link className="brand" href={homeHref} aria-label="Endeavor Cleaning home" onClick={() => setMobileOpen(false)}>
           <img src="/assets/endeavor-logo-v1.png" alt="Endeavor — A Tradition of Quality Cleaning" />
         </Link>
 
@@ -187,7 +190,10 @@ export default function SiteHeader() {
         <div className="nav-actions">
           <Link className="book-button" href="/book">
             <span className="calendar-icon" aria-hidden="true" />
-            Book Now
+            {t.bookNow}
+          </Link>
+          <Link className="lang-switch" href={t.switchHref} lang={locale === "ar" ? "en" : "ar"} aria-label={locale === "ar" ? "Switch to English" : "التبديل إلى العربية"}>
+            {t.switchLabel}
           </Link>
           <a className="contact-icon contact-icon--call" href="tel:+971529597778" aria-label="Call Endeavor Cleaning on +971 52 959 7778">
             <CallIcon />
@@ -197,7 +203,7 @@ export default function SiteHeader() {
           </a>
         </div>
 
-        <div className="brand-note"><span aria-hidden="true" />Dubai service</div>
+        <div className="brand-note"><span aria-hidden="true" />{t.dubaiService}</div>
       </div>
 
       {mounted

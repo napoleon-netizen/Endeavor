@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 import { serviceAreas } from "@/lib/areas";
+import type { Locale } from "@/lib/i18n";
+import { ui } from "@/lib/i18n";
 
 function PinIcon() {
   return (
@@ -10,16 +12,17 @@ function PinIcon() {
   );
 }
 
-export default function ServiceAreas() {
+export default function ServiceAreas({ locale = "en" }: { locale?: Locale }) {
+  const t = ui[locale];
   return (
     <section className="areas" aria-label="Areas we serve">
       <div className="content-shell">
         <div className="section-heading-row">
           <div>
-            <span className="section-kicker">Areas we serve</span>
-            <h2 className="section-heading">Across Dubai and Sharjah</h2>
+            <span className="section-kicker">{t.areasKicker}</span>
+            <h2 className="section-heading">{t.areasTitle}</h2>
           </div>
-          <Link className="section-link" href="/contact">Not listed? Ask us →</Link>
+          <Link className="section-link" href="/contact">{t.areasAsk}</Link>
         </div>
         <div className="areas-grid">
           {serviceAreas.map((group) => (
@@ -27,8 +30,8 @@ export default function ServiceAreas() {
               <header>
                 <span className="icon-tile icon-tile--sm"><PinIcon /></span>
                 <div>
-                  <h3>{group.emirate}</h3>
-                  <p>{group.blurb}</p>
+                  <h3>{locale === "ar" ? group.emirateAr : group.emirate}</h3>
+                  <p>{locale === "ar" ? group.blurbAr : group.blurb}</p>
                 </div>
               </header>
               <ul>

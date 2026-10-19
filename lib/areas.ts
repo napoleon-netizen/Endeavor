@@ -1,6 +1,8 @@
 export const serviceAreas = [
   {
     emirate: "Dubai",
+    emirateAr: "دبي",
+    blurbAr: "فلل وتاون هاوس وشقق في المجمعات السكنية المسوّرة والأبراج في أنحاء المدينة.",
     blurb: "Villas, townhouses and apartments across the city's gated communities and towers.",
     places: [
       "Arabian Ranches 1, 2 & 3", "Mudon", "Villanova", "Dubai Hills Estate", "DAMAC Hills", "Town Square",
@@ -12,6 +14,8 @@ export const serviceAreas = [
   },
   {
     emirate: "Sharjah",
+    emirateAr: "الشارقة",
+    blurbAr: "زيارات مجدولة للمنازل والشركات في أحياء الشارقة السكنية الرئيسية.",
     blurb: "Scheduled visits for homes and businesses in Sharjah's main residential districts.",
     places: [
       "Al Zahia", "Aljada", "Sharjah Sustainable City", "Tilal City", "Muwaileh", "Al Khan", "Al Majaz",
