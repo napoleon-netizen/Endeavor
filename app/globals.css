@@ -431,7 +431,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 62% 40%;
+  object-position: 58% 38%;
 }
 
 .hero-full__shade {
@@ -3626,7 +3626,8 @@ a {
   opacity: .8;
 }
 
-.client-mark img { max-height: 44px; max-width: 170px; object-fit: contain; filter: grayscale(1); opacity: .85; }
+.client-mark img { max-height: 46px; max-width: 170px; object-fit: contain; filter: grayscale(1) contrast(1.05); opacity: .8; transition: filter .2s ease, opacity .2s ease; }
+.client-mark:hover img { filter: none; opacity: 1; }
 
 @keyframes clients-scroll {
   to { transform: translateX(-50%); }

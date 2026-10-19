@@ -118,7 +118,7 @@ export default function Home() {
   return (
     <SiteFrame>
       <section className="hero-full" aria-label="Endeavor Cleaning overview">
-        <img src="/assets/photos/ac-grille-install.webp" alt="Endeavor technicians refitting a cleaned AC grille in a Dubai villa" fetchPriority="high" />
+        <img src="/assets/photos/team-crew.webp" alt="The Endeavor Cleaning crew arriving at a Dubai villa with professional equipment" fetchPriority="high" />
         <div className="hero-full__shade" aria-hidden="true" />
         <div className="content-shell hero-full__content">
           <span className="page-eyebrow page-eyebrow--light">A Tradition of Quality Cleaning</span>
@@ -161,7 +161,7 @@ export default function Home() {
             </div>
 
             <Link className="forest-card" href="/book?mode=quote">
-              <img src="/assets/photos/quote-card.webp" alt="The Endeavor team arriving at a Dubai villa with professional equipment" loading="lazy" />
+              <img src="/assets/photos/team-lounge.webp" alt="Endeavor technicians deep cleaning a Dubai living room" loading="lazy" />
               <div className="forest-copy">
                 <span className="plant-badge" aria-hidden="true">✦</span>
                 <div>
