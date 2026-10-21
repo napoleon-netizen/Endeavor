@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import type { Locale } from "@/lib/i18n";
 import { ui } from "@/lib/i18n";
+import { company } from "@/lib/company";
 import SocialLinks from "./SocialLinks";
 
 export default function SiteFooter({ locale = "en" }: { locale?: Locale }) {
@@ -26,14 +27,18 @@ export default function SiteFooter({ locale = "en" }: { locale?: Locale }) {
         </nav>
 
         <div className="footer-contact-quick">
-          <a href="tel:+971529597778" dir="ltr">+971 52 959 7778</a>
-          <a href="https://wa.me/971588754060">{t.whatsappUs}</a>
+          <a href={company.phoneMobileHref} dir="ltr">{company.phoneMobile}</a>
+          <a href={company.whatsappHref}>{t.whatsappUs}</a>
         </div>
+
+        <a className="footer-address" href={company.mapsUrl} target="_blank" rel="noopener noreferrer">
+          {company.addressLines.join(" · ")}
+        </a>
       </div>
 
       <div className="content-shell footer-bottom">
         <span>© {new Date().getFullYear()} {t.rights}</span>
-        <span>{t.location}</span>
+        <a href={company.mapsUrl} target="_blank" rel="noopener noreferrer">{t.location}</a>
       </div>
     </footer>
   );

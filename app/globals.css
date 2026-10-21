@@ -968,7 +968,9 @@ a {
 }
 
 .partner-card__cta {
-  margin: 18px 24px 24px;
+  margin: 22px 24px 32px;
+  align-self: flex-start;
+  padding: 0 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -3504,9 +3506,11 @@ a {
 
 .areas-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
+
+.areas-card ul { justify-content: center; }
 
 .areas-card {
   padding: 26px;
@@ -3515,9 +3519,16 @@ a {
   border: 1px solid var(--border);
 }
 
-.areas-card header { display: flex; gap: 14px; align-items: flex-start; }
-.areas-card h3 { margin: 0; font-size: 22px; font-weight: 900; color: var(--navy); }
-.areas-card header p { margin: 4px 0 0; font-size: 14px; opacity: .72; }
+.areas-card header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.areas-card h3 { margin: 0; font-size: 24px; font-weight: 900; color: var(--navy); }
+.areas-card header p { margin: 2px 0 0; font-size: 14px; opacity: .72; max-width: 520px; }
+.areas-card header > div { display: flex; flex-direction: column; align-items: center; }
 
 .areas-card ul {
   list-style: none;
@@ -3646,7 +3657,7 @@ a {
   opacity: .8;
 }
 
-.client-mark img { max-height: 46px; max-width: 170px; object-fit: contain; filter: grayscale(1) contrast(1.05); opacity: .8; transition: filter .2s ease, opacity .2s ease; }
+.client-mark img { max-height: 52px; max-width: 170px; object-fit: contain; filter: grayscale(1) contrast(1.1); opacity: .85; transition: filter .2s ease, opacity .2s ease; }
 .client-mark:hover img { filter: none; opacity: 1; }
 
 @keyframes clients-scroll {
@@ -3718,7 +3729,7 @@ a {
 /* Interior / Exterior / Commercial chips */
 .partner-card__chips {
   list-style: none;
-  margin: 14px 0 18px;
+  margin: 14px 24px 18px;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -3733,3 +3744,23 @@ a {
   background: linear-gradient(135deg, var(--tint-blue), var(--tint-brown));
   border: 1px solid rgb(26 24 82 / 8%);
 }
+
+/* Centre the services strip heading and row */
+.home-services-section { text-align: center; }
+.home-services-section .section-heading { text-align: center; }
+.home-services-intro { margin-left: auto; margin-right: auto; }
+.home-services-grid { justify-content: center; margin-left: auto; margin-right: auto; }
+
+.footer-address {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  opacity: .78;
+  text-align: center;
+}
+.footer-address:hover { opacity: 1; text-decoration: underline; }
+.footer-bottom a:hover { text-decoration: underline; }
+.contact-location__address a { display: inline-block; margin-top: 8px; color: var(--rust); font-weight: 800; font-size: 14px; }
+.contact-card-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
