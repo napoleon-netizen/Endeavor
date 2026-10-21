@@ -3646,7 +3646,7 @@ a {
   opacity: .8;
 }
 
-.client-mark img { max-height: 46px; max-width: 170px; object-fit: contain; filter: grayscale(1) contrast(1.05); opacity: .8; transition: filter .2s ease, opacity .2s ease; }
+.client-mark img { max-height: 52px; max-width: 170px; object-fit: contain; filter: grayscale(1) contrast(1.1); opacity: .85; transition: filter .2s ease, opacity .2s ease; }
 .client-mark:hover img { filter: none; opacity: 1; }
 
 @keyframes clients-scroll {

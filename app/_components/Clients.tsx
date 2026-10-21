@@ -20,7 +20,7 @@ export default function Clients({ compact = false, locale = "en" }: { compact?: 
         <div className="clients__row">
           {items.map((client, index) => (
             <span className="client-mark" role="listitem" key={`${client.name}-${index}`} aria-hidden={index >= clients.length}>
-              {client.logo ? <img src={client.logo} alt={client.name} loading="lazy" /> : client.name}
+              {client.logo ? <img src={client.logo} alt={client.name} loading="lazy" onError={undefined} /> : client.name}
             </span>
           ))}
         </div>
