@@ -3511,7 +3511,6 @@ a {
 }
 
 .areas-card ul { justify-content: center; }
-.areas-card header { justify-content: center; text-align: left; }
 
 .areas-card {
   padding: 26px;
@@ -3520,9 +3519,16 @@ a {
   border: 1px solid var(--border);
 }
 
-.areas-card header { display: flex; gap: 14px; align-items: flex-start; }
-.areas-card h3 { margin: 0; font-size: 22px; font-weight: 900; color: var(--navy); }
-.areas-card header p { margin: 4px 0 0; font-size: 14px; opacity: .72; }
+.areas-card header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.areas-card h3 { margin: 0; font-size: 24px; font-weight: 900; color: var(--navy); }
+.areas-card header p { margin: 2px 0 0; font-size: 14px; opacity: .72; max-width: 520px; }
+.areas-card header > div { display: flex; flex-direction: column; align-items: center; }
 
 .areas-card ul {
   list-style: none;
@@ -3723,7 +3729,7 @@ a {
 /* Interior / Exterior / Commercial chips */
 .partner-card__chips {
   list-style: none;
-  margin: 14px 0 18px;
+  margin: 14px 24px 18px;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
