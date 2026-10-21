@@ -968,7 +968,9 @@ a {
 }
 
 .partner-card__cta {
-  margin: 18px 24px 24px;
+  margin: 22px 24px 32px;
+  align-self: flex-start;
+  padding: 0 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -3504,9 +3506,12 @@ a {
 
 .areas-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
+
+.areas-card ul { justify-content: center; }
+.areas-card header { justify-content: center; text-align: left; }
 
 .areas-card {
   padding: 26px;
