@@ -51,8 +51,8 @@ export default function ContactPage() {
             <h2>Serving communities across Dubai</h2>
             <p>Endeavor&apos;s teams are dispatched daily across the city — from Downtown and Business Bay to the Marina, JVC and beyond. Share your community when you book and we&apos;ll confirm access and timing.</p>
             <div className="contact-location__address">
-              <strong>Business Bay, Dubai, UAE</strong>
-              <span>Exact office location shared once your appointment is confirmed.</span>
+              <strong>Office 709, Al Fattan Plaza</strong>
+              <span>Airport Road, Garhoud<br />Dubai, United Arab Emirates</span>
             </div>
             <div className="contact-location__social">
               <span>Follow along</span>
@@ -61,10 +61,10 @@ export default function ContactPage() {
           </div>
           <div className="contact-location__map">
             <iframe
-              src="https://www.google.com/maps?q=Business+Bay,+Dubai,+UAE&output=embed"
+              src="https://www.google.com/maps?q=Al+Fattan+Plaza,+Airport+Road,+Garhoud,+Dubai&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Endeavor Cleaning service area — Business Bay, Dubai"
+              title="Endeavor Cleaning Services office — Al Fattan Plaza, Garhoud, Dubai"
             />
           </div>
         </section>

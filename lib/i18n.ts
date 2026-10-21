@@ -16,7 +16,7 @@ export const ui = {
     reviewsNote: "Every review is published exactly as our customers wrote it.", more: "More →", googleReview: "Google review",
     clientsKicker: "Our clients", clientsTitle: "Preferred by Dubai's top companies and communities",
     clientsBlurb: "Relied on by businesses, property managers and homeowners across Dubai since 2014.",
-    areasKicker: "Areas we serve", areasTitle: "Across Dubai and Sharjah", areasAsk: "Not listed? Ask us →",
+    areasKicker: "Areas we serve", areasTitle: "Communities we serve across Dubai", areasAsk: "Not listed? Ask us →",
   },
   ar: {
     home: "الرئيسية", services: "الخدمات", about: "من نحن", contact: "اتصل بنا", reviews: "التقييمات",
@@ -29,7 +29,7 @@ export const ui = {
     reviewsNote: "كل تقييم منشور كما كتبه عملاؤنا تماماً.", more: "المزيد ←", googleReview: "تقييم جوجل",
     clientsKicker: "عملاؤنا", clientsTitle: "الخيار المفضل لكبرى الشركات والمجمعات السكنية في دبي",
     clientsBlurb: "تثق بنا الشركات ومديرو العقارات وأصحاب المنازل في دبي منذ عام 2014.",
-    areasKicker: "المناطق التي نخدمها", areasTitle: "في جميع أنحاء دبي والشارقة", areasAsk: "منطقتك غير مدرجة؟ اسألنا ←",
+    areasKicker: "المناطق التي نخدمها", areasTitle: "المجتمعات التي نخدمها في دبي", areasAsk: "منطقتك غير مدرجة؟ اسألنا ←",
   },
 } as const;
 
@@ -37,7 +37,7 @@ export const arServices: Record<string, { name: string; shortName: string; summa
   "ac-cleaning": { name: "تنظيف المكيفات", shortName: "تنظيف المكيفات", summary: "تنظيف الفلاتر والفتحات والمكونات الداخلية لهواء أنقى وتبريد أفضل." },
   "water-tank-cleaning": { name: "تنظيف خزانات المياه", shortName: "خزانات المياه", summary: "إزالة الرواسب والأوساخ وتعقيم الخزان لمياه أنظف وأكثر أماناً." },
   "specialized-deep-cleaning": { name: "التنظيف العميق المتخصص", shortName: "التنظيف العميق", summary: "خطة تنظيف غرفة بغرفة حسب حجم العقار وحالته." },
-  "external-window-facade-cleaning": { name: "تنظيف النوافذ والواجهات الخارجية", shortName: "النوافذ والواجهات", summary: "تنظيف الزجاج الخارجي والواجهات بأدوات احترافية." },
+  "external-window-facade-cleaning": { name: "تنظيف النوافذ والواجهات", shortName: "النوافذ والواجهات", summary: "تنظيف النوافذ من الداخل والخارج وتنظيف الواجهات بأدوات احترافية." },
   "sofa-cleaning": { name: "تنظيف الكنب", shortName: "تنظيف الكنب", summary: "تنظيف عميق للكنب والمقاعد المنجدة بطريقة تناسب نوع القماش." },
   "mattress-cleaning": { name: "تنظيف المراتب", shortName: "تنظيف المراتب", summary: "إزالة الغبار والعث والبقع من المراتب لنوم صحي." },
   "carpet-cleaning": { name: "غسيل السجاد", shortName: "غسيل السجاد", summary: "غسيل السجاد الثابت والسجاد المتحرك حسب نوع الخامة." },

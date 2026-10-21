@@ -192,9 +192,7 @@ export default function SiteHeader() {
             <span className="calendar-icon" aria-hidden="true" />
             {t.bookNow}
           </Link>
-          <Link className="lang-switch" href={t.switchHref} lang={locale === "ar" ? "en" : "ar"} aria-label={locale === "ar" ? "Switch to English" : "التبديل إلى العربية"}>
-            {t.switchLabel}
-          </Link>
+          {/* Language switch hidden until the Arabic site is complete (Segni, 21 Oct 2026) */}
           <a className="contact-icon contact-icon--call" href="tel:+971529597778" aria-label="Call Endeavor Cleaning on +971 52 959 7778">
             <CallIcon />
           </a>

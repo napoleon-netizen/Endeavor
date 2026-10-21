@@ -997,7 +997,7 @@ a {
 
 .popular-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 26px;
 }
 
@@ -1912,6 +1912,8 @@ a {
 }
 
 .package-option__actions {
+  width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1921,16 +1923,26 @@ a {
 }
 
 .package-option__select {
+  box-sizing: border-box;
   width: 100%;
+  max-width: 100%;
   min-height: 50px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 26px;
   background: var(--rust);
   color: #fff;
   font-size: 13.5px;
+  line-height: 1.25;
   font-weight: 900;
   letter-spacing: .3px;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  white-space: normal;
   transition: background .18s ease, transform .18s ease;
 }
 
@@ -3190,6 +3202,10 @@ a {
   .nav-actions { grid-column: 2; grid-row: 1; }
   .contact-icon { display: none; }
   .brand-note { display: none; }
+}
+
+/* Bottom booking bar: phones and small tablets only */
+@media (max-width: 900px) {
   .site-frame { padding-bottom: 64px; }
   .mobile-contact-bar {
     display: flex;
@@ -3204,6 +3220,9 @@ a {
     border-top: 1px solid var(--border);
     box-shadow: 0 -8px 24px rgb(26 24 82 / 10%);
   }
+}
+
+@media (max-width: 1400px) {
   .side-panels.side-panels--row { grid-template-columns: 1fr 1fr; }
   .finder-grid { grid-template-columns: repeat(4, 1fr); }
   .partner-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
@@ -3680,4 +3699,37 @@ a {
 @media (max-width: 1400px) {
   .rtl .wa-float { left: 16px; }
   .rtl .review-card--a, .rtl .review-card--b { transform: none; }
+}
+
+/* Review CTA card (shown until verified reviews are added) */
+.review-grid--empty { grid-template-columns: minmax(0, 520px); }
+.review-card--cta {
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 36px 28px;
+  transform: none;
+}
+.review-card--cta svg { width: 40px; height: 40px; }
+.review-card--cta strong { font-size: 18px; font-weight: 900; color: var(--navy); }
+.review-card--cta span { font-size: 14px; opacity: .75; }
+.review-card--cta:hover { box-shadow: 0 28px 56px rgb(0 0 0 / 28%); }
+
+/* Interior / Exterior / Commercial chips */
+.partner-card__chips {
+  list-style: none;
+  margin: 14px 0 18px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.partner-card__chips li {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  background: linear-gradient(135deg, var(--tint-blue), var(--tint-brown));
+  border: 1px solid rgb(26 24 82 / 8%);
 }
