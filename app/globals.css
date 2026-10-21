@@ -3739,3 +3739,17 @@ a {
 .home-services-section .section-heading { text-align: center; }
 .home-services-intro { margin-left: auto; margin-right: auto; }
 .home-services-grid { justify-content: center; margin-left: auto; margin-right: auto; }
+
+.footer-address {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  opacity: .78;
+  text-align: center;
+}
+.footer-address:hover { opacity: 1; text-decoration: underline; }
+.footer-bottom a:hover { text-decoration: underline; }
+.contact-location__address a { display: inline-block; margin-top: 8px; color: var(--rust); font-weight: 800; font-size: 14px; }
+.contact-card-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }

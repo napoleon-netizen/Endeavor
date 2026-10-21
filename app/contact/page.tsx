@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import SiteFrame from "../_components/SiteFrame";
 import SocialLinks from "../_components/SocialLinks";
+import { company } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Contact Endeavor Cleaning | Dubai",
@@ -13,6 +14,7 @@ const contacts = [
   { label: "Mobile calls", value: "+971 52 959 7778", copy: "Talk through your property, timing and the service that fits best.", href: "tel:+971529597778", action: "Call mobile" },
   { label: "WhatsApp", value: "+971 58 875 4060", copy: "Send property details, photos and questions — fastest for quotes.", href: "https://wa.me/971588754060", action: "Open WhatsApp" },
   { label: "Office", value: "+971 4 250 8515", copy: "Reach the Dubai office directly during business hours.", href: "tel:+97142508515", action: "Call office" },
+  { label: "Visit us", value: "Office 709, Al Fattan Plaza", copy: "Airport Road, Garhoud, Dubai. Open in Google Maps for directions.", href: company.mapsUrl, action: "Get directions" },
 ];
 
 export default function ContactPage() {
@@ -47,12 +49,13 @@ export default function ContactPage() {
 
         <section className="inner-section inner-shell contact-location">
           <div className="contact-location__copy">
-            <span className="page-eyebrow">Where we work</span>
-            <h2>Serving communities across Dubai</h2>
+            <span className="page-eyebrow">Our office</span>
+            <h2>Al Fattan Plaza, Garhoud — serving all of Dubai</h2>
             <p>Endeavor&apos;s teams are dispatched daily across the city — from Downtown and Business Bay to the Marina, JVC and beyond. Share your community when you book and we&apos;ll confirm access and timing.</p>
             <div className="contact-location__address">
               <strong>Office 709, Al Fattan Plaza</strong>
               <span>Airport Road, Garhoud<br />Dubai, United Arab Emirates</span>
+              <a href={company.mapsUrl} target="_blank" rel="noopener noreferrer">Open in Google Maps →</a>
             </div>
             <div className="contact-location__social">
               <span>Follow along</span>
