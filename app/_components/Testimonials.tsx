@@ -37,7 +37,7 @@ export default function Testimonials({ locale = "en" }: { locale?: Locale }) {
             <strong>{googleRating.score}</strong>
             <div>
               <Stars size={22} />
-              <span>{googleRating.count} {t.googleReviews}</span>
+              <span>{t.googleReviews}</span>
             </div>
           </div>
           <a className="rating-panel__google" href={googleReviewsUrl} target="_blank" rel="noopener noreferrer">
