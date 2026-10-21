@@ -1,21 +1,24 @@
 export const partnerColumns = [
   {
-    name: "Residential Cleaning",
-    copy: "Detailed services for apartments and villas, from focused furniture care to complete property cleaning.",
-    image: "/assets/photos/deep-covering-sm.webp",
-    href: "/services?category=property-cleaning",
+    name: "Interior Cleaning",
+    copy: "Inside the home or office: AC systems, deep cleaning, sofas, mattresses, carpets, kitchens, bathrooms and marble floors.",
+    image: "/assets/photos/team-lounge-sm.webp",
+    href: "/services?category=interior",
+    services: ["AC Cleaning", "Deep Cleaning", "Sofa & Mattress", "Carpet Shampooing", "Kitchen & Bathroom", "Marble Polishing"],
+  },
+  {
+    name: "Exterior Cleaning",
+    copy: "Outside and on the roof: water tanks, external windows and façades, car parks and post-construction clean-ups.",
+    image: "/assets/photos/tank-rooftop-sm.webp",
+    href: "/services?category=exterior",
+    services: ["Water Tank Cleaning", "Window & Façade", "Post-Construction", "Car Parks & Common Areas"],
   },
   {
     name: "Commercial Cleaning",
-    copy: "Planned cleaning for offices, facilities and customer-facing spaces around access and operating needs.",
+    copy: "Planned cleaning for offices, facilities and customer-facing spaces, scheduled around access and operating hours.",
     image: "/assets/photos/commercial-parking-sm.webp",
     href: "/commercial",
-  },
-  {
-    name: "Specialist Services",
-    copy: "AC systems, water tanks, façades, marble and other work that needs a clearly defined scope.",
-    image: "/assets/photos/tank-rooftop-sm.webp",
-    href: "/services",
+    services: ["Offices", "Retail & Clinics", "Facilities", "Kitchen Ducts", "Annual Contracts"],
   },
 ];
 

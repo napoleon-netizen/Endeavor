@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { services } from "@/lib/services";
-import { Chevron, PopularIcon, popularServices } from "./_components/homeData";
+import { Chevron, PopularIcon, partnerColumns, popularServices } from "./_components/homeData";
 import SiteFrame from "./_components/SiteFrame";
 import Clients from "./_components/Clients";
 import ServiceAreas from "./_components/ServiceAreas";
@@ -111,6 +111,31 @@ export default function Home() {
       <Testimonials />
 
       <Clients />
+
+      <div className="content-shell">
+        <section className="partner-section" id="services" aria-label="Interior, exterior and commercial cleaning">
+          <div className="section-heading-row">
+            <div>
+              <span className="section-kicker">Interior · Exterior · Commercial</span>
+              <h2 className="section-heading">Cleaning for every part of your property</h2>
+            </div>
+            <Link className="section-link" href="/services">See all 12 services →</Link>
+          </div>
+          <div className="partner-grid">
+            {partnerColumns.map((column) => (
+              <article className="partner-card" key={column.name}>
+                <div className="partner-card__image"><img src={column.image} alt="" loading="lazy" /></div>
+                <h3>{column.name}</h3>
+                <p>{column.copy}</p>
+                <ul className="partner-card__chips">
+                  {column.services.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+                <Link className="partner-card__cta" href={column.href}>Explore options</Link>
+              </article>
+            ))}
+          </div>
+        </section>
+      </div>
 
       <ServiceAreas />
     </SiteFrame>

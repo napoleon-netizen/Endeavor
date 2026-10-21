@@ -35,9 +35,9 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
         </section>
 
         <div className="inner-shell service-anchor-strip" aria-label="Service categories">
-          <span id="air-water">Air & Water</span>
-          <span id="furniture-floors">Furniture & Floors</span>
-          <span id="property-cleaning">Property Cleaning</span>
+          <span id="interior">Interior</span>
+          <span id="exterior">Exterior</span>
+          <span id="commercial">Commercial &amp; Specialist</span>
         </div>
 
         <div className="inner-shell">
