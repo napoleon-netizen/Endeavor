@@ -6,8 +6,9 @@ import SiteFrame from "../_components/SiteFrame";
 import ServicesExplorer from "./ServicesExplorer";
 
 export const metadata: Metadata = {
-  title: "Cleaning Services in Dubai | Endeavor Cleaning",
-  description: "Browse Endeavor cleaning services for AC units, water tanks, furniture, floors, homes and business properties in Dubai.",
+  title: "Cleaning Services in Dubai | 12 Services With Prices | Endeavor",
+  description: "All Endeavor cleaning services in Dubai with starting prices: AC, deep cleaning, sofa, carpet shampooing, water tank, marble polishing, kitchen duct, bathroom and more.",
+  alternates: { canonical: "/services" },
 };
 
 type ServicesPageProps = {

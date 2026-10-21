@@ -6,8 +6,9 @@ import SocialLinks from "../_components/SocialLinks";
 import { company } from "@/lib/company";
 
 export const metadata: Metadata = {
-  title: "Contact Endeavor Cleaning | Dubai",
-  description: "Call, WhatsApp or start a structured booking request with Endeavor Cleaning in Dubai.",
+  title: "Contact Endeavor Cleaning Services | Al Fattan Plaza, Garhoud, Dubai",
+  description: "Call, WhatsApp or visit Endeavor Cleaning Services at Office 709, Al Fattan Plaza, Airport Road, Garhoud, Dubai. Free quotes for homes and businesses.",
+  alternates: { canonical: "/contact" },
 };
 
 const contacts = [

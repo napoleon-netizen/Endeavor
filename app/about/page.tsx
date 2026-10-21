@@ -6,8 +6,9 @@ import ConcernIcon from "../_components/ConcernIcon";
 import SiteFrame from "../_components/SiteFrame";
 
 export const metadata: Metadata = {
-  title: "About Endeavor Cleaning | Dubai",
-  description: "Learn how Endeavor approaches professional cleaning for homes and businesses in Dubai.",
+  title: "About Endeavor Cleaning Services | ISO-Certified Cleaning Company in Dubai Since 2014",
+  description: "Founded in 2014, Endeavor Cleaning Services is ISO 9001, 14001 and 45001 certified and Dubai Municipality approved, trusted by homes and leading companies across Dubai.",
+  alternates: { canonical: "/about" },
 };
 
 const principles = [

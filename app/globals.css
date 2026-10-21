@@ -3764,3 +3764,26 @@ a {
 .footer-bottom a:hover { text-decoration: underline; }
 .contact-location__address a { display: inline-block; margin-top: 8px; color: var(--rust); font-weight: 800; font-size: 14px; }
 .contact-card-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+
+/* Legal pages */
+.legal-page { max-width: 820px; padding: 40px 0 72px; }
+.legal-page h1 { margin: 10px 0 6px; font-size: clamp(32px, 3vw, 44px); font-weight: 900; color: var(--navy); }
+.legal-page__meta { margin: 0 0 18px; font-size: 13px; opacity: .65; }
+.legal-page__intro { font-size: 17px; line-height: 1.6; }
+.legal-page__body h2 { margin: 34px 0 10px; font-size: 20px; font-weight: 900; color: var(--navy); }
+.legal-page__body p, .legal-page__body li { font-size: 15.5px; line-height: 1.7; }
+.legal-page__body ul, .legal-page__body ol { padding-left: 22px; }
+.legal-page__body li + li { margin-top: 6px; }
+.legal-page__body a { color: var(--rust); font-weight: 700; }
+.footer-bottom__links { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; }
+.footer-bottom__links a { font-size: 13px; opacity: .85; }
+
+.booking-form__status--sent {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #eaf7ee;
+  border: 1px solid #bfe3c9;
+  color: #1f5a30;
+}
+.booking-form__status--sent strong { display: block; margin-bottom: 4px; font-size: 16px; }
+.booking-form__status--sent a { color: var(--rust); font-weight: 800; }

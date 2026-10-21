@@ -5,8 +5,9 @@ import SiteFrame from "../_components/SiteFrame";
 import BookingForm from "./BookingForm";
 
 export const metadata: Metadata = {
-  title: "Book a Cleaning Service | Endeavor Cleaning",
-  description: "Start an Endeavor cleaning service booking or request an exact quote for your Dubai property.",
+  title: "Book a Cleaning Service in Dubai | Free Quote | Endeavor",
+  description: "Book AC, deep cleaning, sofa, carpet, water tank and more in Dubai. Choose your service and option and send your request in minutes.",
+  alternates: { canonical: "/book" },
 };
 
 type BookingPageProps = {
@@ -46,7 +47,7 @@ export default async function BookingPage({ searchParams }: BookingPageProps) {
             </div>
           </aside>
 
-          <BookingForm initialService={initialService} initialPackage={initialPackage} initialMode={initialMode} />
+          <BookingForm initialService={initialService} initialPackage={initialPackage} initialMode={initialMode} requestedService={requestedService} />
         </section>
       </main>
     </SiteFrame>

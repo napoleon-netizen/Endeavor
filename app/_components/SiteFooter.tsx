@@ -38,6 +38,12 @@ export default function SiteFooter({ locale = "en" }: { locale?: Locale }) {
 
       <div className="content-shell footer-bottom">
         <span>© {new Date().getFullYear()} {t.rights}</span>
+        <nav className="footer-bottom__links" aria-label="Legal">
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/terms">Terms &amp; Conditions</Link>
+          <Link href="/booking-policy">Booking &amp; Cancellation</Link>
+          <Link href="/sitemap-page">Sitemap</Link>
+        </nav>
         <a href={company.mapsUrl} target="_blank" rel="noopener noreferrer">{t.location}</a>
       </div>
     </footer>

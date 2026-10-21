@@ -24,6 +24,8 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   return {
     title: service.seoTitle ?? `${service.name} Dubai | Endeavor Cleaning`,
     description: service.seoDescription ?? service.summary,
+    alternates: { canonical: `/services/${service.slug}` },
+    openGraph: { title: service.seoTitle ?? `${service.name} Dubai | Endeavor Cleaning`, description: service.seoDescription ?? service.summary, images: [{ url: service.image }] },
   };
 }
 
@@ -34,10 +36,54 @@ export default async function ServicePage({ params }: ServicePageProps) {
   if (!service) notFound();
 
   const bookingQuery = { service: service.slug, mode: service.quoteOnly ? "quote" : "booking" };
+  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://endeavorclean.com";
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: service.name,
+      serviceType: service.name,
+      description: service.seoDescription ?? service.summary,
+      provider: { "@id": `${base}/#business` },
+      areaServed: { "@type": "City", name: "Dubai" },
+      url: `${base}/services/${service.slug}`,
+      image: `${base}${service.image}`,
+      ...(service.packages?.some((p) => p.price)
+        ? {
+            offers: service.packages.filter((p) => p.price).map((p) => ({
+              "@type": "Offer",
+              name: p.name,
+              description: p.subtitle,
+              priceCurrency: "AED",
+              price: p.price?.replace(/[^0-9.]/g, "") || undefined,
+            })),
+          }
+        : {}),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: service.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: base },
+        { "@type": "ListItem", position: 2, name: "Services", item: `${base}/services` },
+        { "@type": "ListItem", position: 3, name: service.name, item: `${base}/services/${service.slug}` },
+      ],
+    },
+  ];
   const relatedServices = services.filter((item) => item.slug !== service.slug && item.category === service.category).slice(0, 3);
 
   return (
     <SiteFrame>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <main className="inner-page">
         <div className="inner-shell breadcrumbs">
           <Link href="/">Home</Link><span>/</span><Link href="/services">Services</Link><span>/</span><strong>{service.name}</strong>
