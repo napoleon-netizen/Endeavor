@@ -9,13 +9,14 @@ type BookingFormProps = {
   initialService: string;
   initialPackage: string;
   initialMode: "booking" | "quote";
+  requestedService?: string;
 };
 
 function packageKey(option: { id?: string; name: string }) {
   return option.id ?? option.name;
 }
 
-export default function BookingForm({ initialService, initialPackage, initialMode }: BookingFormProps) {
+export default function BookingForm({ initialService, initialPackage, initialMode, requestedService }: BookingFormProps) {
   const [serviceSlug, setServiceSlug] = useState(initialService);
   const [packageKeyValue, setPackageKeyValue] = useState(initialPackage);
   const [whatsAppUrl, setWhatsAppUrl] = useState("");
@@ -29,7 +30,7 @@ export default function BookingForm({ initialService, initialPackage, initialMod
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const selectedName = selectedService?.name ?? String(formData.get("service") ?? "General enquiry");
+    const selectedName = selectedService?.name ?? (requestedService === "commercial" ? "Commercial cleaning (site visit)" : String(formData.get("service") || "General enquiry"));
     const packageLabel = selectedPackage ? `${selectedPackage.name}${selectedPackage.subtitle ? ` — ${selectedPackage.subtitle}` : ""}` : "Please advise";
     const lines = [
       "Hello Endeavor Cleaning,",
@@ -68,14 +69,14 @@ export default function BookingForm({ initialService, initialPackage, initialMod
           <select
             name="service"
             value={serviceSlug}
-            required
+            required={requestedService !== "commercial"}
             onChange={(event) => {
               setServiceSlug(event.target.value);
               setPackageKeyValue("");
               setWhatsAppUrl("");
             }}
           >
-            <option value="" disabled>Select a service</option>
+            <option value="" disabled={requestedService !== "commercial"}>{requestedService === "commercial" ? "Commercial cleaning (site visit)" : "Select a service"}</option>
             {services.map((service) => <option value={service.slug} key={service.slug}>{service.name}</option>)}
           </select>
         </label>
@@ -140,8 +141,15 @@ export default function BookingForm({ initialService, initialPackage, initialMod
       <label className="booking-terms"><input type="checkbox" required /><span>I agree to send these details to Endeavor and understand that price, availability and access must be confirmed before the service is final.</span></label>
       <button className="booking-submit" type="submit">{isQuote ? "Continue to Exact Quote" : "Continue to Booking"}<span aria-hidden="true">→</span></button>
 
-      <div className="booking-form__status" aria-live="polite">
-        {whatsAppUrl ? <p>Your request is ready. If WhatsApp did not open, <a href={whatsAppUrl}>continue here</a>.</p> : <p>Submitting prepares a structured WhatsApp message. You review it before sending.</p>}
+      <div className={`booking-form__status ${whatsAppUrl ? "booking-form__status--sent" : ""}`} aria-live="polite" role="status">
+        {whatsAppUrl ? (
+          <>
+            <strong>✓ Your request is prepared.</strong>
+            <p>WhatsApp should have opened with your details filled in. Press <em>Send</em> there and we will confirm price, availability and access. If it did not open, <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">tap here to open WhatsApp</a>, or call <a href="tel:+971529597778">+971 52 959 7778</a>.</p>
+          </>
+        ) : (
+          <p>Submitting prepares a structured WhatsApp message with your details. You review it before sending.</p>
+        )}
       </div>
     </form>
   );

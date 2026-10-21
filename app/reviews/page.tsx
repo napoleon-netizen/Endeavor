@@ -4,8 +4,9 @@ import Link from "next/link";
 import SiteFrame from "../_components/SiteFrame";
 
 export const metadata: Metadata = {
-  title: "Customer Reviews | Endeavor Cleaning",
-  description: "Find verified review sources for Endeavor Cleaning services in Dubai.",
+  title: "Customer Reviews | Endeavor Cleaning Services Dubai",
+  description: "Read genuine Google reviews from Endeavor Cleaning Services customers across Dubai.",
+  alternates: { canonical: "/reviews" },
 };
 
 export default function ReviewsPage() {
