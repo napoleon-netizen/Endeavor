@@ -31,7 +31,7 @@ export default function PackageOptions({ packages, bookingQuery, ctaLabel, noFea
               {servicePackage.image ? (
                 <div className="package-option__image"><img src={servicePackage.image} alt="" /></div>
               ) : null}
-              <span className="package-option__badge">{isFeatured ? "Best Value" : `Option ${index + 1}`}</span>
+              <span className="package-option__badge">{`Option ${index + 1}`}</span>
               <h3>{servicePackage.name}</h3>
               {servicePackage.subtitle ? <p className="package-option__subtitle">{servicePackage.subtitle}</p> : null}
               {servicePackage.price ? <strong className="package-option__price">{servicePackage.price}</strong> : null}

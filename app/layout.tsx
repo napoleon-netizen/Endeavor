@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://endeavorclean.com"),
-  alternates: { canonical: "/", languages: { en: "/", ar: "/ar" } },
+  alternates: { canonical: "/" },
   title: "Endeavor | A Tradition of Quality Cleaning",
   description: "Professional residential and commercial cleaning with a tradition of quality care.",
   icons: {

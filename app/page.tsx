@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { services } from "@/lib/services";
-import { Chevron, PopularIcon, partnerColumns, popularServices } from "./_components/homeData";
+import { Chevron, PopularIcon, popularServices } from "./_components/homeData";
 import SiteFrame from "./_components/SiteFrame";
 import Clients from "./_components/Clients";
 import ServiceAreas from "./_components/ServiceAreas";
@@ -22,7 +22,7 @@ export default function Home() {
             <a className="hero-cta hero-cta--secondary" href="https://wa.me/971588754060" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
           </div>
           <ul className="hero-trust" aria-label="Why Endeavor">
-            <li>4.8 ★ on Google · 480 reviews</li>
+            <li>4.8 ★ on Google · 26 reviews</li>
             <li>Since 2014</li>
             <li>ISO 9001 · 14001 · 45001</li>
             <li>Dubai Municipality approved</li>
@@ -111,28 +111,6 @@ export default function Home() {
       <Testimonials />
 
       <Clients />
-
-      <div className="content-shell">
-        <section className="partner-section" id="services" aria-label="Endeavor cleaning categories">
-          <div className="section-heading-row">
-            <div>
-              <span className="section-kicker">Choose by need</span>
-              <h2 className="section-heading">Cleaning support for every kind of space</h2>
-            </div>
-            <Link className="section-link" href="/services">See all 12 services →</Link>
-          </div>
-          <div className="partner-grid">
-            {partnerColumns.map((column) => (
-              <article className="partner-card" key={column.name}>
-                <div className="partner-card__image"><img src={column.image} alt="" /></div>
-                <h3>{column.name}</h3>
-                <p>{column.copy}</p>
-                <Link className="partner-card__cta" href={column.href}>Explore options</Link>
-              </article>
-            ))}
-          </div>
-        </section>
-      </div>
 
       <ServiceAreas />
     </SiteFrame>

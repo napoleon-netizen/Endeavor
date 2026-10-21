@@ -12,14 +12,4 @@ export const serviceAreas = [
       "Mirdif", "Dubai Silicon Oasis", "The Villa", "Deira", "Bur Dubai",
     ],
   },
-  {
-    emirate: "Sharjah",
-    emirateAr: "الشارقة",
-    blurbAr: "زيارات مجدولة للمنازل والشركات في أحياء الشارقة السكنية الرئيسية.",
-    blurb: "Scheduled visits for homes and businesses in Sharjah's main residential districts.",
-    places: [
-      "Al Zahia", "Aljada", "Sharjah Sustainable City", "Tilal City", "Muwaileh", "Al Khan", "Al Majaz",
-      "Al Nahda", "Al Taawun", "Maryam Island", "Al Qasimia", "Al Rahmaniya",
-    ],
-  },
 ];

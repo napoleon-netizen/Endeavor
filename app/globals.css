@@ -3190,6 +3190,10 @@ a {
   .nav-actions { grid-column: 2; grid-row: 1; }
   .contact-icon { display: none; }
   .brand-note { display: none; }
+}
+
+/* Bottom booking bar: phones and small tablets only */
+@media (max-width: 900px) {
   .site-frame { padding-bottom: 64px; }
   .mobile-contact-bar {
     display: flex;
@@ -3204,6 +3208,9 @@ a {
     border-top: 1px solid var(--border);
     box-shadow: 0 -8px 24px rgb(26 24 82 / 10%);
   }
+}
+
+@media (max-width: 1400px) {
   .side-panels.side-panels--row { grid-template-columns: 1fr 1fr; }
   .finder-grid { grid-template-columns: repeat(4, 1fr); }
   .partner-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
@@ -3681,3 +3688,17 @@ a {
   .rtl .wa-float { left: 16px; }
   .rtl .review-card--a, .rtl .review-card--b { transform: none; }
 }
+
+/* Review CTA card (shown until verified reviews are added) */
+.review-grid--empty { grid-template-columns: minmax(0, 520px); }
+.review-card--cta {
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 36px 28px;
+  transform: none;
+}
+.review-card--cta svg { width: 40px; height: 40px; }
+.review-card--cta strong { font-size: 18px; font-weight: 900; color: var(--navy); }
+.review-card--cta span { font-size: 14px; opacity: .75; }
+.review-card--cta:hover { box-shadow: 0 28px 56px rgb(0 0 0 / 28%); }

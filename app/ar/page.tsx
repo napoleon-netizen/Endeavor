@@ -39,7 +39,7 @@ export default function HomeArabic() {
             <a className="hero-cta hero-cta--secondary" href={`https://wa.me/971588754060?text=${waText}`} target="_blank" rel="noopener noreferrer">راسلنا على واتساب</a>
           </div>
           <ul className="hero-trust" aria-label="لماذا إنديفور">
-            <li>4.8 ★ على جوجل · 480 تقييم</li>
+            <li>4.8 ★ على جوجل · 26 تقييماً</li>
             <li>منذ 2014</li>
             <li dir="ltr">ISO 9001 · 14001 · 45001</li>
             <li>معتمدون من بلدية دبي</li>

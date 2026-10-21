@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import type { Locale } from "@/lib/i18n";
 import { ui } from "@/lib/i18n";
-import { googleRating, reviews } from "@/lib/reviews";
+import { googleRating, googleReviewsUrl, reviews } from "@/lib/reviews";
 
 function Stars({ size = 18 }: { size?: number }) {
   return (
@@ -40,25 +40,38 @@ export default function Testimonials({ locale = "en" }: { locale?: Locale }) {
               <span>{googleRating.count} {t.googleReviews}</span>
             </div>
           </div>
-          <a className="rating-panel__google" href="https://www.google.com/search?q=Endeavor+Cleaning+Services+Dubai+reviews" target="_blank" rel="noopener noreferrer">
+          <a className="rating-panel__google" href={googleReviewsUrl} target="_blank" rel="noopener noreferrer">
             <GoogleG /> {t.readOnGoogle}
           </a>
           <p className="rating-panel__note">{t.reviewsNote} <Link href="/reviews">{t.more}</Link></p>
         </aside>
 
-        <div className="review-grid">
-          {reviews.map((review, index) => (
-            <figure className={`review-card review-card--${index % 2 ? "b" : "a"}`} key={review.name}>
-              <span className="review-card__mark" aria-hidden="true">“</span>
-              <Stars />
-              <blockquote lang="en" dir="ltr">{review.quote}</blockquote>
-              <figcaption>
-                <span className="review-avatar" aria-hidden="true">{review.name.charAt(0)}</span>
-                <div><strong>{review.name}</strong><small>{review.service} · {t.googleReview}</small></div>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        {reviews.length ? (
+          <div className="review-grid">
+            {reviews.map((review, index) => (
+              <figure className={`review-card review-card--${index % 2 ? "b" : "a"}`} key={review.url}>
+                <span className="review-card__mark" aria-hidden="true">“</span>
+                <Stars />
+                <blockquote lang="en" dir="ltr">{review.quote}</blockquote>
+                <figcaption>
+                  <span className="review-avatar" aria-hidden="true">{review.name.charAt(0)}</span>
+                  <div>
+                    <strong>{review.name}</strong>
+                    <small>{review.service ? `${review.service} · ` : ""}<a href={review.url} target="_blank" rel="noopener noreferrer">{t.googleReview} ↗</a></small>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        ) : (
+          <div className="review-grid review-grid--empty">
+            <a className="review-card review-card--cta" href={googleReviewsUrl} target="_blank" rel="noopener noreferrer">
+              <GoogleG />
+              <strong>Read what our customers say on Google</strong>
+              <span>{googleRating.count} verified reviews · {googleRating.score} average rating</span>
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

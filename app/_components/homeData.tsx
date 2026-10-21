@@ -49,7 +49,7 @@ export const popularServices = [
     href: "/services/move-in-move-out-cleaning",
   },
   {
-    name: "Carpet Cleaning",
+    name: "Carpet Shampooing",
     copy: "Choose a suitable approach for fitted carpet or loose rugs based on material and area.",
     image: "/assets/photos/carpet-machine-sm.webp",
     icon: "sofa",
