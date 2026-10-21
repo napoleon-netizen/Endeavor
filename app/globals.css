@@ -3811,3 +3811,15 @@ a {
 .inner-section-heading p { max-width: 640px; }
 .service-hero__copy p { max-width: 580px; }
 .faq-list summary { font-size: 16px; }
+
+/* Footer bottom: stacked and centred */
+.footer-bottom {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 0 22px;
+  text-align: center;
+}
+.footer-bottom__links { gap: 8px 22px; }
+@media (max-width: 900px) { .footer-bottom { padding-bottom: 28px; } }
