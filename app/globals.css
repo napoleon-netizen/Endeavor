@@ -3204,7 +3204,7 @@ a {
     border-top: 1px solid var(--border);
     box-shadow: 0 -8px 24px rgb(26 24 82 / 10%);
   }
-  .side-panels--row { grid-template-columns: 1fr 1fr; }
+  .side-panels.side-panels--row { grid-template-columns: 1fr 1fr; }
   .finder-grid { grid-template-columns: repeat(4, 1fr); }
   .partner-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
   .popular-grid { grid-template-columns: repeat(2, 1fr); }
@@ -3253,7 +3253,8 @@ a {
   .hero-full__shade { background: linear-gradient(180deg, rgb(20 18 60 / 30%) 0%, rgb(20 18 60 / 72%) 100%); }
   .hero-trust li { font-size: 12px; padding: 7px 11px; }
   .side-panels,
-  .side-panels--row { grid-template-rows: auto; grid-template-columns: 1fr; }
+  .side-panels.side-panels--row { grid-template-rows: auto; grid-template-columns: 1fr; min-height: 0; }
+  .forest-card { min-height: 260px; }
   .finder-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .finder-tile__label { font-size: 11px; }
   .air-card,
