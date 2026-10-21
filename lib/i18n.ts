@@ -37,7 +37,7 @@ export const arServices: Record<string, { name: string; shortName: string; summa
   "ac-cleaning": { name: "تنظيف المكيفات", shortName: "تنظيف المكيفات", summary: "تنظيف الفلاتر والفتحات والمكونات الداخلية لهواء أنقى وتبريد أفضل." },
   "water-tank-cleaning": { name: "تنظيف خزانات المياه", shortName: "خزانات المياه", summary: "إزالة الرواسب والأوساخ وتعقيم الخزان لمياه أنظف وأكثر أماناً." },
   "specialized-deep-cleaning": { name: "التنظيف العميق المتخصص", shortName: "التنظيف العميق", summary: "خطة تنظيف غرفة بغرفة حسب حجم العقار وحالته." },
-  "external-window-facade-cleaning": { name: "تنظيف النوافذ والواجهات الخارجية", shortName: "النوافذ والواجهات", summary: "تنظيف الزجاج الخارجي والواجهات بأدوات احترافية." },
+  "external-window-facade-cleaning": { name: "تنظيف النوافذ والواجهات", shortName: "النوافذ والواجهات", summary: "تنظيف النوافذ من الداخل والخارج وتنظيف الواجهات بأدوات احترافية." },
   "sofa-cleaning": { name: "تنظيف الكنب", shortName: "تنظيف الكنب", summary: "تنظيف عميق للكنب والمقاعد المنجدة بطريقة تناسب نوع القماش." },
   "mattress-cleaning": { name: "تنظيف المراتب", shortName: "تنظيف المراتب", summary: "إزالة الغبار والعث والبقع من المراتب لنوم صحي." },
   "carpet-cleaning": { name: "غسيل السجاد", shortName: "غسيل السجاد", summary: "غسيل السجاد الثابت والسجاد المتحرك حسب نوع الخامة." },
