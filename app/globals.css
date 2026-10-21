@@ -3787,3 +3787,27 @@ a {
 }
 .booking-form__status--sent strong { display: block; margin-bottom: 4px; font-size: 16px; }
 .booking-form__status--sent a { color: var(--rust); font-weight: 800; }
+
+/* Service page polish: two-column inclusion/exclusion lists, sticky fact panel */
+@media (min-width: 821px) {
+  .included-list,
+  .excluded-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    border-top: 0;
+  }
+  .included-list li,
+  .excluded-list li { min-height: 52px; }
+  .excluded-list li { min-height: 46px; font-size: 14px; }
+  .service-fact-panel { position: sticky; top: 120px; }
+}
+.included-list li,
+.excluded-list li { padding: 6px 0; line-height: 1.4; }
+.inner-section-heading--tight { margin-top: 36px; }
+
+/* Typography consistency */
+.inner-section-heading h2 { letter-spacing: -.3px; }
+.inner-section-heading p { max-width: 640px; }
+.service-hero__copy p { max-width: 580px; }
+.faq-list summary { font-size: 16px; }
