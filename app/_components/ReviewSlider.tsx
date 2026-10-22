@@ -71,19 +71,23 @@ export default function ReviewSlider({ reviews, linkLabel, autoplay = true }: Pr
       </div>
       <div className="review-slider__controls">
         <button type="button" className="review-slider__arrow" onClick={() => scrollTo(index - 1)} aria-label="Previous review">‹</button>
-        <div className="review-slider__dots" role="tablist" aria-label="Choose review">
-          {reviews.map((review, i) => (
-            <button
-              type="button"
-              key={review.name}
-              role="tab"
-              aria-selected={i === index}
-              aria-label={`Review ${i + 1}: ${review.name}`}
-              className={`review-slider__dot ${i === index ? "review-slider__dot--active" : ""}`}
-              onClick={() => scrollTo(i)}
-            />
-          ))}
-        </div>
+        {count > 8 ? (
+          <span className="review-slider__count" aria-live="polite">{index + 1} / {count}</span>
+        ) : (
+          <div className="review-slider__dots" role="tablist" aria-label="Choose review">
+            {reviews.map((review, i) => (
+              <button
+                type="button"
+                key={review.name}
+                role="tab"
+                aria-selected={i === index}
+                aria-label={`Review ${i + 1}: ${review.name}`}
+                className={`review-slider__dot ${i === index ? "review-slider__dot--active" : ""}`}
+                onClick={() => scrollTo(i)}
+              />
+            ))}
+          </div>
+        )}
         <button type="button" className="review-slider__arrow" onClick={() => scrollTo(index + 1)} aria-label="Next review">›</button>
       </div>
     </div>
