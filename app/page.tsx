@@ -91,20 +91,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="home-services-section" aria-label="Our cleaning services">
-          <h2 className="section-heading">Our Cleaning Services</h2>
-          <p className="home-services-intro">Explore our professional cleaning services by selecting a service below.</p>
-          <div className="home-services-grid">
-            {services.map((service) => (
-              <Link className="home-services-card" href={`/services/${service.slug}`} key={service.slug}>
-                <div className="home-services-card__image">
-                  <img src={service.image} alt="" />
-                </div>
-                <span>{service.name}</span>
-              </Link>
-            ))}
-          </div>
-        </section>
 
       </div>
 

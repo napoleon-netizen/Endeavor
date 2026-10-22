@@ -40,6 +40,7 @@ export default function SiteHeader() {
   const homeHref = locale === "ar" ? "/ar" : "/";
   const navLinks = [
     { label: t.about, href: "/about" },
+    { label: t.reviews, href: "/reviews" },
     { label: t.contact, href: "/contact" },
   ];
   const [mounted, setMounted] = useState(false);
