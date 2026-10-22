@@ -2,8 +2,9 @@
 // Only genuine Google reviews may be quoted here, verbatim, with the customer's
 // name, the service they mention, and a direct link to the review.
 export const googleRating = { score: "4.8", count: "26" };
-export const googleReviewsUrl = "https://www.google.com/search?q=Endeavor+Cleaning+Services+Dubai+reviews";
-export const writeReviewUrl = "https://www.google.com/search?q=Endeavor+Cleaning+Services+Dubai+reviews#lrd=,1";
+// Opens the Google reviews panel for the Endeavor listing directly (place reference 0x3e5f6790026bbd13:0x720c18c1407e5f7f).
+export const googleReviewsUrl = "https://www.google.com/search?q=Endeavor+Cleaning+Services+Dubai+reviews#lrd=0x3e5f6790026bbd13:0x720c18c1407e5f7f,1,,,,";
+export const writeReviewUrl = "https://www.google.com/search?q=Endeavor+Cleaning+Services+Dubai+reviews#lrd=0x3e5f6790026bbd13:0x720c18c1407e5f7f,3,,,,";
 
 export type Review = { name: string; service?: string; quote: string; url: string; date?: string };
 export const reviews: Review[] = [

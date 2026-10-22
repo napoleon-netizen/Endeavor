@@ -45,25 +45,25 @@ export const popularServices = [
     href: "/services/specialized-deep-cleaning",
   },
   {
-    name: "Marble Polishing",
-    copy: "Restore dull, scratched or etched marble floors with diamond polishing and sealing.",
-    image: "/assets/photos/marble-outdoor-sm.webp",
-    icon: "sofa",
-    href: "/services/marble-polishing",
-  },
-  {
-    name: "Post-Construction Cleaning",
-    copy: "Fine-dust extraction and detailed cleaning before handover or occupancy.",
-    image: "/assets/photos/glass-partition-sm.webp",
-    icon: "box",
-    href: "/services/post-construction-cleaning",
-  },
-  {
     name: "Sofa Cleaning",
     copy: "Deep extraction cleaning matched to your fabric, with leather care where needed.",
     image: "/assets/photos/sofa-extraction-sm.webp",
     icon: "sofa",
     href: "/services/sofa-cleaning",
+  },
+  {
+    name: "Mattress Cleaning",
+    copy: "Deep extraction for accumulated dust, everyday dirt and treatable marks, matched to the mattress material.",
+    image: "/assets/photos/sofa-nozzle-sm.webp",
+    icon: "bed",
+    href: "/services/mattress-cleaning",
+  },
+  {
+    name: "Carpet Shampooing",
+    copy: "Shampooing and extraction for fitted and loose carpets, matched to the material and condition.",
+    image: "/assets/photos/carpet-machine-sm.webp",
+    icon: "carpet",
+    href: "/services/carpet-cleaning",
   },
 ] as const;
 
@@ -97,6 +97,24 @@ export function PopularIcon({ kind }: { kind: (typeof popularServices)[number]["
       <svg viewBox="0 0 40 40" aria-hidden="true">
         <path {...common} d="M15 15h8v18a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2Z" />
         <path {...common} d="M17 15v-3h4v3M25 12h4l-2 3h3l-6 6" />
+      </svg>
+    );
+  }
+
+  if (kind === "bed") {
+    return (
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <path {...common} d="M7 26v-9a3 3 0 0 1 3-3h20a3 3 0 0 1 3 3v9M7 26h26M7 26v4M33 26v4" />
+        <path {...common} d="M12 14v-3h16v3M12 19h6M22 19h6" />
+      </svg>
+    );
+  }
+
+  if (kind === "carpet") {
+    return (
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <path {...common} d="M9 12h22v16H9z" />
+        <path {...common} d="M9 12c3 0 3 4 0 4M31 12c-3 0-3 4 0 4M9 24c3 0 3 4 0 4M31 24c-3 0-3 4 0 4M15 18h10M15 22h10" />
       </svg>
     );
   }

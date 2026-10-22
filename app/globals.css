@@ -3126,7 +3126,24 @@ a {
   .service-menu__item { font-size: 21px; }
 }
 
+/* Compact desktop header (laptops): full navigation stays visible */
 @media (max-width: 1400px) {
+  .site-header { height: 92px; }
+  .site-header--scrolled { height: 70px; }
+  .header-shell { gap: 18px; }
+  .brand { width: 190px; height: 70px; }
+  .brand img { width: 190px; }
+  .site-header--scrolled .brand img { width: 160px; }
+  .primary-nav { gap: 20px; height: 80px; }
+  .nav-link { font-size: 17px; }
+  .nav-actions { gap: 12px; }
+  .book-button { padding-inline: 16px; font-size: 15px; }
+  .contact-icon--call { display: none; }
+  .brand-note { display: none; }
+}
+
+/* Hamburger menu: tablets and phones only */
+@media (max-width: 1024px) {
   .site-header { height: 96px; }
   .site-header--scrolled { height: 72px; }
   .header-shell { display: grid; grid-template-columns: 1fr auto auto; align-items: center; padding-top: 0; }
