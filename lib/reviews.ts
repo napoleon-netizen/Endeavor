@@ -98,12 +98,6 @@ export const reviews: Review[] = [
     url: googleReviewsUrl,
   },
   {
-    name: "Sara El Gothamy",
-    rating: 4,
-    quote: "We had some major comments and they came back to rectify. Everything looks fine now.",
-    url: googleReviewsUrl,
-  },
-  {
     name: "Jay Shah",
     rating: 5,
     quote: "Good work",
@@ -111,5 +105,5 @@ export const reviews: Review[] = [
   },
 ];
 
-/** The reviews shown on the homepage. */
-export const featuredReviews = reviews.slice(0, 3);
+/** The reviews shown in the homepage slider. */
+export const featuredReviews = reviews;

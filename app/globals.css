@@ -3886,3 +3886,74 @@ a {
   .reviews-hero__score div { align-items: flex-start; }
   .reviews-all .review-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Review slider ---------- */
+.review-slider { position: relative; min-width: 0; }
+.review-slider__track {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0;
+  padding: 8px 2px 22px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.review-slider__track::-webkit-scrollbar { display: none; }
+.review-slider__slide {
+  flex: 0 0 calc((100% - 22px) / 2);
+  scroll-snap-align: start;
+  display: flex;
+}
+.review-slider__slide .review-card { flex: 1; transform: none; }
+.review-slider__slide .review-card blockquote {
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.review-slider__slide .review-card:hover blockquote,
+.review-slider__slide .review-card:focus-within blockquote { -webkit-line-clamp: unset; }
+
+.review-slider__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 4px;
+}
+.review-slider__arrow {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 8%);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .16s ease, transform .16s ease;
+}
+.review-slider__arrow:hover { background: rgb(255 255 255 / 18%); transform: translateY(-1px); }
+.review-slider__dots { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; max-width: 60%; }
+.review-slider__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 30%);
+  cursor: pointer;
+  transition: transform .16s ease, background .16s ease;
+}
+.review-slider__dot--active { background: #f3c9b5; transform: scale(1.4); }
+
+.reviews-all .review-slider__slide { flex-basis: calc((100% - 44px) / 3); }
+
+@media (max-width: 1400px) {
+  .reviews-all .review-slider__slide { flex-basis: calc((100% - 22px) / 2); }
+}
+@media (max-width: 1024px) {
+  .review-slider__slide { flex-basis: 100%; }
+  .reviews-all .review-slider__slide { flex-basis: 100%; }
+}

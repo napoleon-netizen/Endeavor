@@ -3,7 +3,8 @@ import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import { ui } from "@/lib/i18n";
 import { featuredReviews, googleRating, googleReviewsUrl } from "@/lib/reviews";
-import { GoogleG, ReviewCard, Stars } from "./ReviewBits";
+import { GoogleG, Stars } from "./ReviewBits";
+import ReviewSlider from "./ReviewSlider";
 
 export default function Testimonials({ locale = "en" }: { locale?: Locale }) {
   const t = ui[locale];
@@ -27,11 +28,7 @@ export default function Testimonials({ locale = "en" }: { locale?: Locale }) {
         </aside>
 
         {featuredReviews.length ? (
-          <div className="review-grid">
-            {featuredReviews.map((review, index) => (
-              <ReviewCard review={review} index={index} linkLabel={t.googleReview} key={review.name} />
-            ))}
-          </div>
+          <ReviewSlider reviews={featuredReviews} linkLabel={t.googleReview} />
         ) : (
           <div className="review-grid review-grid--empty">
             <a className="review-card review-card--cta" href={googleReviewsUrl} target="_blank" rel="noopener noreferrer">

@@ -3,7 +3,8 @@ import Link from "next/link";
 
 import { googleRating, googleReviewsUrl, reviews, writeReviewUrl } from "@/lib/reviews";
 import SiteFrame from "../_components/SiteFrame";
-import { GoogleG, ReviewCard, Stars } from "../_components/ReviewBits";
+import { GoogleG, Stars } from "../_components/ReviewBits";
+import ReviewSlider from "../_components/ReviewSlider";
 
 export const metadata: Metadata = {
   title: "Customer Reviews | Endeavor Cleaning Services Dubai",
@@ -40,17 +41,13 @@ export default function ReviewsPage() {
             <div className="reviews-all__heading">
               <div>
                 <span className="section-kicker section-kicker--light">Verified on Google</span>
-                <h2>{reviews.length} reviews, word for word</h2>
+                <h2>What customers wrote, word for word</h2>
               </div>
               <a className="rating-panel__google" href={googleReviewsUrl} target="_blank" rel="noopener noreferrer">
-                <GoogleG /> {fiveStar} of {reviews.length} are five stars
+                <GoogleG /> {fiveStar} five-star reviews shown
               </a>
             </div>
-            <div className="review-grid">
-              {reviews.map((review, index) => (
-                <ReviewCard review={review} index={index} key={review.name} />
-              ))}
-            </div>
+            <ReviewSlider reviews={reviews} />
           </div>
         </section>
 
