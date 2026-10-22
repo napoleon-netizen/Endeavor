@@ -28,7 +28,7 @@ export default function ReviewsPage() {
                 <span>From {googleRating.count} Google reviews</span>
               </div>
             </div>
-            <p>Every review on this page is a genuine Google review, published exactly as the customer wrote it — name, rating and the service they received.</p>
+            <p>Every Google review of Endeavor, published exactly as the customer wrote it — name, rating and the service they received. Nothing is filtered out.</p>
             <div className="page-hero__actions">
               <a className="solid-action" href={googleReviewsUrl} target="_blank" rel="noopener noreferrer">Read all reviews on Google ↗</a>
               <a className="outline-action" href={writeReviewUrl} target="_blank" rel="noopener noreferrer">Write a review</a>
@@ -41,25 +41,13 @@ export default function ReviewsPage() {
             <div className="reviews-all__heading">
               <div>
                 <span className="section-kicker section-kicker--light">Verified on Google</span>
-                <h2>What customers wrote, word for word</h2>
+                <h2>All {reviews.length} reviews, word for word</h2>
               </div>
               <a className="rating-panel__google" href={googleReviewsUrl} target="_blank" rel="noopener noreferrer">
                 <GoogleG /> {fiveStar} of {reviews.length} are five stars
               </a>
             </div>
             <ReviewSlider reviews={reviews} />
-          </div>
-        </section>
-
-        <section className="inner-section inner-shell reviews-standard">
-          <div className="inner-section-heading">
-            <span className="page-eyebrow">Our review standard</span>
-            <h2>How reviews reach this page</h2>
-          </div>
-          <div className="review-policy-list">
-            <article><span>01</span><h3>Google only</h3><p>Every review is taken from our public Google Business Profile — nothing is invented or collected privately.</p></article>
-            <article><span>02</span><h3>Unedited</h3><p>Reviews appear exactly as written, including the customer's own wording, spelling and rating.</p></article>
-            <article><span>03</span><h3>Named and dated</h3><p>Customer name and the service received are shown as given; the full review history is one click away on Google.</p></article>
           </div>
         </section>
 

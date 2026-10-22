@@ -2,8 +2,8 @@
 // review panel). Only genuine Google reviews may be quoted here, verbatim, with
 // the customer's name, their star rating and the service they mention. Reviews
 // whose text was truncated on Google ("… More") are not included until the full
-// text is captured. Star-only reviews are shown without a quote. The single
-// 2-star review is not displayed (client decision, 22 Oct 2026).
+// text is captured. Star-only reviews are shown without a quote. Every
+// review on the listing is displayed, including the 2-star one (22 Oct 2026).
 export const googleRating = { score: "4.8", count: "26" };
 // Opens the Google reviews panel for the Endeavor listing directly (place reference 0x3e5f6790026bbd13:0x720c18c1407e5f7f).
 export const googleReviewsUrl = "https://www.google.com/search?q=Endeavor+Cleaning+Services+Dubai+reviews#lrd=0x3e5f6790026bbd13:0x720c18c1407e5f7f,1,,,,";
@@ -190,6 +190,7 @@ export const reviews: Review[] = [
   },
   { name: "moin zaveri", rating: 5, quote: "", url: googleReviewsUrl },
   { name: "Heer Haria", rating: 5, quote: "", url: googleReviewsUrl },
+  { name: "omar salah", rating: 2, quote: "I don’t recommend", url: googleReviewsUrl },
 ];
 
 /** The reviews shown in the homepage slider. */
