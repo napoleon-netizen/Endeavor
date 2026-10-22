@@ -28,7 +28,11 @@ export function ReviewCard({ review, index, linkLabel = "Google review" }: { rev
     <figure className={`review-card review-card--${index % 2 ? "b" : "a"}`}>
       <span className="review-card__mark" aria-hidden="true">“</span>
       <Stars rating={review.rating} />
-      <blockquote lang="en" dir="ltr">{review.quote}</blockquote>
+      {review.quote ? (
+        <blockquote lang="en" dir="ltr">{review.quote}</blockquote>
+      ) : (
+        <blockquote lang="en" dir="ltr" className="review-card__stars-only">{review.rating}-star rating — no written review</blockquote>
+      )}
       <figcaption>
         <span className="review-avatar" aria-hidden="true">{review.name.charAt(0)}</span>
         <div>

@@ -2,8 +2,8 @@
 // review panel). Only genuine Google reviews may be quoted here, verbatim, with
 // the customer's name, their star rating and the service they mention. Reviews
 // whose text was truncated on Google ("… More") are not included until the full
-// text is captured. Reviews with no text are not listed. Only five-star
-// reviews are displayed (client decision, 22 Oct 2026).
+// text is captured. Star-only reviews are shown without a quote. The single
+// 2-star review is not displayed (client decision, 22 Oct 2026).
 export const googleRating = { score: "4.8", count: "26" };
 // Opens the Google reviews panel for the Endeavor listing directly (place reference 0x3e5f6790026bbd13:0x720c18c1407e5f7f).
 export const googleReviewsUrl = "https://www.google.com/search?q=Endeavor+Cleaning+Services+Dubai+reviews#lrd=0x3e5f6790026bbd13:0x720c18c1407e5f7f,1,,,,";
@@ -15,6 +15,7 @@ export type Review = {
   rating: 1 | 2 | 3 | 4 | 5;
   /** Service the customer mentions; omitted when the review does not say. */
   service?: string;
+  /** Empty when the customer left stars only. */
   quote: string;
   /** Direct link to the review where available; otherwise the listing's review panel. */
   url: string;
@@ -101,6 +102,13 @@ export const reviews: Review[] = [
     url: googleReviewsUrl,
   },
   {
+    name: "Karlo Antonio Guinhawa",
+    rating: 5,
+    quote:
+      "I am very satisfied with the services they rendered and how quickly they response. They are very professional in addressing the issue and immediately provide a solution. Every dirham is worth it. Thank you guys!",
+    url: googleReviewsUrl,
+  },
+  {
     name: "Rene Mar Hisona",
     rating: 5,
     quote:
@@ -174,6 +182,14 @@ export const reviews: Review[] = [
     quote: "Good work",
     url: googleReviewsUrl,
   },
+  {
+    name: "Sara El Gothamy",
+    rating: 4,
+    quote: "We had some major comments and they came back to rectify. Everything looks fine now.",
+    url: googleReviewsUrl,
+  },
+  { name: "moin zaveri", rating: 5, quote: "", url: googleReviewsUrl },
+  { name: "Heer Haria", rating: 5, quote: "", url: googleReviewsUrl },
 ];
 
 /** The reviews shown in the homepage slider. */

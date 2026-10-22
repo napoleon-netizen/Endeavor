@@ -3957,3 +3957,5 @@ a {
   .review-slider__slide { flex-basis: 100%; }
   .reviews-all .review-slider__slide { flex-basis: 100%; }
 }
+
+.review-card__stars-only { font-style: italic; opacity: .6; }

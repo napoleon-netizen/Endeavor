@@ -44,7 +44,7 @@ export default function ReviewsPage() {
                 <h2>What customers wrote, word for word</h2>
               </div>
               <a className="rating-panel__google" href={googleReviewsUrl} target="_blank" rel="noopener noreferrer">
-                <GoogleG /> {fiveStar} five-star reviews shown
+                <GoogleG /> {fiveStar} of {reviews.length} are five stars
               </a>
             </div>
             <ReviewSlider reviews={reviews} />
