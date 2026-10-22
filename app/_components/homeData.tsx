@@ -119,14 +119,6 @@ export function PopularIcon({ kind }: { kind: (typeof popularServices)[number]["
     );
   }
 
-  if (kind === "box") {
-    return (
-      <svg viewBox="0 0 40 40" aria-hidden="true">
-        <path {...common} d="M8 14 20 8l12 6-12 6ZM8 14v13l12 6 12-6V14M20 20v13" />
-      </svg>
-    );
-  }
-
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true">
       <path {...common} d="M9 24v-4a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4v4M7 24h26v5a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2ZM9 29v3M31 29v3" />
