@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState, type FormEvent } from "react";
+import { track } from "@/lib/tracking";
 
 import { getService, services } from "@/lib/services";
 import type { BookingField } from "@/lib/services";
@@ -53,6 +54,13 @@ export default function BookingForm({ initialService, initialPackage, initialMod
     ];
     const nextUrl = `https://wa.me/971588754060?text=${encodeURIComponent(lines.join("\n"))}`;
     setWhatsAppUrl(nextUrl);
+    track({
+      event: "lead_submission_success",
+      lead_type: isQuote ? "quote" : "booking",
+      service: selectedName,
+      package: selectedPackage?.name ?? "none",
+      channel: "whatsapp",
+    });
     window.open(nextUrl, "_blank", "noopener,noreferrer");
   }
 
