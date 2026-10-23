@@ -16,10 +16,10 @@ export default function Clients({ compact = false, locale = "en" }: { compact?: 
           <p className="clients__blurb">{t.clientsBlurb}</p>
         </div>
       </div>
-      <div className="clients__track" role="list">
+      <div className="clients__track">
         <div className="clients__row">
           {items.map((client, index) => (
-            <span className="client-mark" role="listitem" key={`${client.name}-${index}`} aria-hidden={index >= clients.length}>
+            <span className="client-mark" key={`${client.name}-${index}`} aria-hidden={index >= clients.length}>
               {client.logo ? <img src={client.logo} alt={client.name} loading="lazy" onError={undefined} /> : client.name}
             </span>
           ))}

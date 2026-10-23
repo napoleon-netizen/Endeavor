@@ -2,7 +2,7 @@ import type { Review } from "@/lib/reviews";
 
 export function Stars({ rating = 5, size = 18 }: { rating?: number; size?: number }) {
   return (
-    <span className="review-stars" aria-label={`${rating} out of 5 stars`} style={{ "--star": `${size}px` } as React.CSSProperties}>
+    <span className="review-stars" role="img" aria-label={`${rating} out of 5 stars`} style={{ "--star": `${size}px` } as React.CSSProperties}>
       {Array.from({ length: 5 }).map((_, i) => (
         <svg key={i} viewBox="0 0 20 20" aria-hidden="true" className={i < rating ? undefined : "review-stars__empty"}>
           <path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8L10 1.5Z" />

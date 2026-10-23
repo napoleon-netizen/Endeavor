@@ -10,8 +10,18 @@ import Testimonials from "./_components/Testimonials";
 export default function Home() {
   return (
     <SiteFrame>
+      <main>
       <section className="hero-full" aria-label="Endeavor Cleaning overview">
-        <img src="/assets/photos/team-crew.webp" alt="The Endeavor Cleaning crew arriving at a Dubai villa with professional equipment" fetchPriority="high" />
+        <img
+          src="/assets/photos/team-crew-1280.webp"
+          srcSet="/assets/photos/team-crew-800.webp 800w, /assets/photos/team-crew-1280.webp 1280w, /assets/photos/team-crew-1920.webp 1920w, /assets/photos/team-crew.webp 2560w"
+          sizes="100vw"
+          width="2560"
+          height="1706"
+          alt="The Endeavor Cleaning crew arriving at a Dubai villa with professional equipment"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="hero-full__shade" aria-hidden="true" />
         <div className="content-shell hero-full__content">
           <span className="page-eyebrow page-eyebrow--light">A Tradition of Quality Cleaning</span>
@@ -54,7 +64,7 @@ export default function Home() {
             </div>
 
             <Link className="forest-card" href="/book?mode=quote">
-              <img src="/assets/photos/team-lounge.webp" alt="Endeavor technicians deep cleaning a Dubai living room" loading="lazy" />
+              <img src="/assets/photos/team-lounge-sm.webp" alt="Endeavor technicians deep cleaning a Dubai living room" loading="lazy" decoding="async" width="800" height="533" />
               <div className="forest-copy">
                 <span className="plant-badge" aria-hidden="true">✦</span>
                 <div>
@@ -78,7 +88,7 @@ export default function Home() {
             {popularServices.map((service) => (
               <article className="popular-card" key={service.name}>
                 <div className="popular-card__image">
-                  <img src={service.image} alt="" />
+                  <img src={service.image} alt="" loading="lazy" decoding="async" width="800" height="533" />
                   <span className="popular-card__icon" aria-hidden="true"><PopularIcon kind={service.icon} /></span>
                 </div>
                 <h3>{service.name}</h3>
@@ -110,7 +120,7 @@ export default function Home() {
           <div className="partner-grid">
             {partnerColumns.map((column) => (
               <article className="partner-card" key={column.name}>
-                <div className="partner-card__image"><img src={column.image} alt="" loading="lazy" /></div>
+                <div className="partner-card__image"><img src={column.image} alt="" loading="lazy" decoding="async" width="800" height="533" /></div>
                 <h3>{column.name}</h3>
                 <p>{column.copy}</p>
                 <ul className="partner-card__chips">
@@ -124,6 +134,7 @@ export default function Home() {
       </div>
 
       <ServiceAreas />
+      </main>
     </SiteFrame>
   );
 }
