@@ -169,7 +169,7 @@ export default function SiteHeader() {
     <header className={`site-header site-header--shared ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="header-shell">
         <Link className="brand" href={homeHref} aria-label="Endeavor Cleaning home" onClick={() => setMobileOpen(false)}>
-          <img src="/assets/endeavor-logo-v1.png" alt="Endeavor — A Tradition of Quality Cleaning" />
+          <img src="/assets/endeavor-logo-v1.png" alt="Endeavor — A Tradition of Quality Cleaning" width="600" height="200" />
         </Link>
 
         <button

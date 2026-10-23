@@ -11,7 +11,7 @@ export default function SiteFooter({ locale = "en" }: { locale?: Locale }) {
     <footer className="site-footer" id="contact">
       <div className="content-shell footer-simple">
         <Link href={locale === "ar" ? "/ar" : "/"} aria-label="Endeavor Cleaning home" className="footer-simple__logo">
-          <img src="/assets/endeavor-logo-v1.png" alt="Endeavor — A Tradition of Quality Cleaning" />
+          <img src="/assets/endeavor-logo-v1.png" alt="Endeavor — A Tradition of Quality Cleaning" loading="lazy" width="600" height="200" />
         </Link>
 
         <p>{t.footerBlurb}</p>

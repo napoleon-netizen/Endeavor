@@ -64,7 +64,7 @@ export default function ReviewSlider({ reviews, linkLabel, autoplay = true }: Pr
     >
       <div className="review-slider__track" ref={track} aria-live="polite">
         {reviews.map((review, i) => (
-          <div className="review-slider__slide" key={review.name} aria-roledescription="slide" aria-label={`Review ${i + 1} of ${count}`}>
+          <div className="review-slider__slide" key={review.name} role="group" aria-roledescription="slide" aria-label={`Review ${i + 1} of ${count}`}>
             <ReviewCard review={review} index={0} linkLabel={linkLabel} />
           </div>
         ))}
