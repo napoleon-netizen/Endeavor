@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-import { getService, services } from "@/lib/services";
 import { arServices, localeFromPath, ui } from "@/lib/i18n";
 
-const acCleaning = getService("ac-cleaning");
+export type NavService = { slug: string; name: string };
+export type NavPackage = { name: string };
+
 
 
 function Chevron() {
@@ -33,7 +34,7 @@ function WhatsAppIcon() {
   );
 }
 
-export default function SiteHeader() {
+export default function SiteHeader({ services, acPackages }: { services: NavService[]; acPackages: NavPackage[] }) {
   const pathname = usePathname();
   const locale = localeFromPath(pathname);
   const t = ui[locale];
@@ -114,7 +115,7 @@ export default function SiteHeader() {
         {servicesOpen ? (
           <div className="nav-services-panel">
             <div className="nav-services-categories">
-              {acCleaning?.packages ? (
+              {acPackages.length ? (
                 <div
                   className={`nav-services-category ${packagesOpen ? "nav-services-category--active" : ""}`}
                   onMouseEnter={() => setPackagesOpen(true)}
@@ -126,7 +127,7 @@ export default function SiteHeader() {
                   </Link>
                   {packagesOpen ? (
                     <div className="nav-services-subpanel">
-                      {acCleaning.packages.map((pkg) => (
+                      {acPackages.map((pkg) => (
                         <Link
                           href={`/book?service=ac-cleaning&package=${encodeURIComponent(pkg.name)}`}
                           key={pkg.name}

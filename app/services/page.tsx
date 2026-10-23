@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { categoryFromSlug } from "@/lib/services";
+import { categoryFromSlug, serviceCategories, services } from "@/lib/services";
 import SiteFrame from "../_components/SiteFrame";
 import ServicesExplorer from "./ServicesExplorer";
 
@@ -42,7 +42,12 @@ export default async function ServicesPage({ searchParams }: ServicesPageProps) 
         </div>
 
         <div className="inner-shell">
-          <ServicesExplorer key={initialCategory} initialCategory={initialCategory} />
+          <ServicesExplorer
+            key={initialCategory}
+            initialCategory={initialCategory}
+            serviceCategories={serviceCategories}
+            services={services.map(({ slug, name, category, image, icon, cardCopy, priceNote, quoteOnly }) => ({ slug, name, category, image, icon, cardCopy, priceNote, quoteOnly }))}
+          />
         </div>
 
         <section className="services-journey-section inner-section">

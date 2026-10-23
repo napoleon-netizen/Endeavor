@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
-import { serviceCategories, services, type ServiceCategory } from "@/lib/services";
+import type { Service, ServiceCategory } from "@/lib/services";
+
+export type ExplorerService = Pick<Service, "slug" | "name" | "category" | "image" | "icon" | "cardCopy" | "priceNote" | "quoteOnly">;
 
 type FilterCategory = "All Services" | ServiceCategory;
 
-export default function ServicesExplorer({ initialCategory = "All Services" }: { initialCategory?: FilterCategory }) {
+export default function ServicesExplorer({ services, serviceCategories, initialCategory = "All Services" }: { services: ExplorerService[]; serviceCategories: readonly FilterCategory[]; initialCategory?: FilterCategory }) {
   const [category, setCategory] = useState<FilterCategory>(initialCategory);
   const [query, setQuery] = useState("");
 
