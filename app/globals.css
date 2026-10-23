@@ -2126,14 +2126,12 @@ a {
   font-size: 13px;
   font-weight: 900;
   background: var(--cream);
-  box-shadow: inset 0 -1px 0 var(--border);
 }
 
 .comparison-table tbody th {
   color: var(--navy);
   font-weight: 700;
   white-space: normal;
-  background: #fff;
 }
 
 .comparison-table tbody tr:not(:last-child) th,
@@ -2153,6 +2151,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 2;
+    box-shadow: inset 0 -1px 0 var(--border);
   }
   .comparison-table tbody th {
     position: sticky;
@@ -2160,6 +2159,7 @@ a {
     z-index: 1;
     min-width: 140px;
     max-width: 200px;
+    background: var(--page);
     box-shadow: inset -1px 0 0 var(--border);
   }
   .comparison-table thead th:first-child {
