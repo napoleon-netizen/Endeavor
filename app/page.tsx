@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { preload } from "react-dom";
 
 import { services } from "@/lib/services";
 import { Chevron, PopularIcon, partnerColumns, popularServices } from "./_components/homeData";
@@ -8,6 +9,13 @@ import ServiceAreas from "./_components/ServiceAreas";
 import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
+  // Preload the hero (LCP image) on this page only, matching the <img> srcset.
+  preload("/assets/photos/team-crew-1280.webp", {
+    as: "image",
+    fetchPriority: "high",
+    imageSrcSet: "/assets/photos/team-crew-800.webp 800w, /assets/photos/team-crew-1280.webp 1280w, /assets/photos/team-crew-1920.webp 1920w, /assets/photos/team-crew.webp 2560w",
+    imageSizes: "100vw",
+  });
   return (
     <SiteFrame>
       <main>

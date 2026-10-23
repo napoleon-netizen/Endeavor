@@ -33,7 +33,7 @@ export default function AboutPage() {
                 <Link className="outline-action" href="/contact">Contact the Team</Link>
               </div>
             </div>
-            <img src="/assets/photos/team-arrival.webp" alt="The Endeavor Cleaning team arriving on site in Dubai" />
+            <img src="/assets/photos/team-arrival.webp" srcSet="/assets/photos/team-arrival-sm.webp 800w, /assets/photos/team-arrival.webp 1920w" sizes="(max-width: 1400px) 100vw, 50vw" width="1920" height="1279" alt="The Endeavor Cleaning team arriving on site in Dubai" fetchPriority="high" decoding="async" />
           </div>
         </section>
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
 
         <section className="inner-section about-story-section">
           <div className="inner-shell about-story-grid">
-            <div><img src="/assets/photos/deep-covering.webp" alt="Endeavor technicians protecting furniture before a deep clean" loading="lazy" /></div>
+            <div><img src="/assets/photos/deep-covering-sm.webp" srcSet="/assets/photos/deep-covering-sm.webp 800w, /assets/photos/deep-covering.webp 1600w" sizes="(max-width: 1400px) 100vw, 50vw" width="1600" height="1066" alt="Endeavor technicians protecting furniture before a deep clean" loading="lazy" decoding="async" /></div>
             <div>
               <span className="page-eyebrow">Homes and businesses</span>
               <h2>One clear journey, adapted to each service</h2>

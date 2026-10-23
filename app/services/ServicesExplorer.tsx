@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
-import { serviceCategories, services, type ServiceCategory } from "@/lib/services";
+import type { Service, ServiceCategory } from "@/lib/services";
+
+export type ExplorerService = Pick<Service, "slug" | "name" | "category" | "image" | "icon" | "cardCopy" | "priceNote" | "quoteOnly">;
 
 type FilterCategory = "All Services" | ServiceCategory;
 
-export default function ServicesExplorer({ initialCategory = "All Services" }: { initialCategory?: FilterCategory }) {
+export default function ServicesExplorer({ services, serviceCategories, initialCategory = "All Services" }: { services: ExplorerService[]; serviceCategories: readonly FilterCategory[]; initialCategory?: FilterCategory }) {
   const [category, setCategory] = useState<FilterCategory>(initialCategory);
   const [query, setQuery] = useState("");
 
@@ -58,8 +60,8 @@ export default function ServicesExplorer({ initialCategory = "All Services" }: {
           {filteredServices.map((service) => (
             <Link className="service-directory-card" href={`/services/${service.slug}`} key={service.slug}>
               <div className="service-directory-media">
-                <img className="service-directory-photo" src={service.image} alt="" />
-                <span className="service-directory-icon"><img src={service.icon} alt="" /></span>
+                <img className="service-directory-photo" src={service.image.replace(".webp", "-sm.webp")} alt="" loading="lazy" decoding="async" width="800" height="533" />
+                <span className="service-directory-icon"><img src={service.icon} alt="" loading="lazy" width="40" height="40" /></span>
                 <span className="service-category-label">{service.category}</span>
               </div>
               <div className="service-directory-body">
