@@ -51,7 +51,7 @@ export default function CommercialPage() {
             <p className="provisional-note">Requests remain provisional until scope, schedule and access are confirmed.</p>
           </div>
           <div className="service-hero__media">
-            <img src="/assets/photos/commercial-parking.webp" alt="Endeavor technician pressure washing a residential car park in Dubai" />
+            <img src="/assets/photos/commercial-parking.webp" srcSet="/assets/photos/commercial-parking-sm.webp 800w, /assets/photos/commercial-parking.webp 1600w" sizes="(max-width: 1400px) 100vw, 50vw" width="1600" height="1200" alt="Endeavor technician pressure washing a residential car park in Dubai" fetchPriority="high" decoding="async" />
           </div>
         </section>
 
@@ -69,7 +69,7 @@ export default function CommercialPage() {
 
         <section className="inner-section about-story-section">
           <div className="inner-shell about-story-grid">
-            <div><img src="/assets/photos/team-arrival.webp" alt="The Endeavor Cleaning team arriving on site with equipment" loading="lazy" /></div>
+            <div><img src="/assets/photos/team-arrival-sm.webp" srcSet="/assets/photos/team-arrival-sm.webp 800w, /assets/photos/team-arrival.webp 1920w" sizes="(max-width: 1400px) 100vw, 50vw" width="1920" height="1279" alt="The Endeavor Cleaning team arriving on site with equipment" loading="lazy" decoding="async" /></div>
             <div>
               <span className="page-eyebrow">Why businesses choose Endeavor</span>
               <h2>Certified, insured and built for scheduled work</h2>

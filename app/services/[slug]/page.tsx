@@ -126,8 +126,17 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </div>
 
           <div className="service-hero__media">
-            <img src={service.image} alt={`${service.name} service by Endeavor Cleaning`} />
-            <div className="service-hero__icon"><img src={service.icon} alt="" /></div>
+            <img
+              src={service.image}
+              srcSet={`${service.image.replace(".webp", "-sm.webp")} 800w, ${service.image} 1600w`}
+              sizes="(max-width: 1400px) 100vw, 45vw"
+              width="1600"
+              height="1066"
+              alt={`${service.name} service by Endeavor Cleaning`}
+              fetchPriority="high"
+              decoding="async"
+            />
+            <div className="service-hero__icon"><img src={service.icon} alt="" width="40" height="40" /></div>
           </div>
         </section>
 
@@ -303,7 +312,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <div className="related-service-grid">
               {relatedServices.map((item) => (
                 <Link href={`/services/${item.slug}`} key={item.slug}>
-                  <span><img src={item.icon} alt="" /></span>
+                  <span><img src={item.icon} alt="" loading="lazy" width="40" height="40" /></span>
                   <div><h3>{item.shortName}</h3><p>View service details →</p></div>
                 </Link>
               ))}
