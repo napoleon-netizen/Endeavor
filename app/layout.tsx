@@ -59,14 +59,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <head>
         <link rel="preload" as="font" type="font/woff2" href="/assets/nunito.woff2" crossOrigin="anonymous" />
-        <link
-          rel="preload"
-          as="image"
-          href="/assets/photos/team-crew-1280.webp"
-          imageSrcSet="/assets/photos/team-crew-800.webp 800w, /assets/photos/team-crew-1280.webp 1280w, /assets/photos/team-crew-1920.webp 1920w, /assets/photos/team-crew.webp 2560w"
-          imageSizes="100vw"
-          fetchPriority="high"
-        />
       </head>
       <body>
         <GoogleTagManagerHead />

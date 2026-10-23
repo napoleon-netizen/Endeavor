@@ -6,6 +6,17 @@
   font-display: swap;
 }
 
+/* Size-matched fallback so text paints immediately in a system font with
+   almost no reflow when Nunito arrives (Lighthouse LCP = h1 render delay). */
+@font-face {
+  font-family: "Nunito Fallback";
+  src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
+  size-adjust: 101.5%;
+  ascent-override: 101%;
+  descent-override: 35%;
+  line-gap-override: 0%;
+}
+
 :root {
   --ink: #17174f;
   --navy: #1A1852;
@@ -34,7 +45,7 @@ body {
   background-image: var(--texture);
   background-attachment: fixed;
   color: var(--ink);
-  font-family: "Nunito", Arial, sans-serif;
+  font-family: "Nunito", "Nunito Fallback", Arial, sans-serif;
 }
 
 a {
