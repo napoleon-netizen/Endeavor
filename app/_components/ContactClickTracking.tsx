@@ -17,7 +17,7 @@ export default function ContactClickTracking() {
       if (!link) return;
       const href = link.getAttribute("href") ?? "";
       const label = (link.getAttribute("aria-label") || link.textContent || "").trim().slice(0, 80);
-      const section = link.closest("header") ? "header" : link.closest("footer") ? "footer" : link.closest(".floating-whatsapp") ? "floating" : "content";
+      const section = link.closest("header") ? "header" : link.closest("footer") ? "footer" : link.closest(".wa-float") ? "floating" : "content";
       if (/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//i.test(href)) {
         track({ event: "whatsapp_click", link_url: href.split("?")[0], link_text: label, link_section: section, page_path: window.location.pathname });
       } else if (/^tel:/i.test(href)) {
