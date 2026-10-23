@@ -14,7 +14,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://tagmanager.google.com https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: blob: https:",
-      "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googleadservices.com https://*.g.doubleclick.net https://*.google.com https://*.google.ae",
+      "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googleadservices.com https://*.doubleclick.net https://*.google.com https://*.google.ae https://*.googlesyndication.com",
       "frame-src https://www.google.com https://www.googletagmanager.com https://td.doubleclick.net",
       "frame-ancestors 'self'",
       "base-uri 'self'",
