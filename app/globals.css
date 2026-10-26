@@ -449,9 +449,10 @@ a {
 .hero-full__shade {
   position: absolute;
   inset: 0;
+  /* Dark behind the text on the left, clear over the team on the right. */
   background:
-    linear-gradient(90deg, rgb(20 18 60 / 78%) 0%, rgb(20 18 60 / 55%) 42%, rgb(20 18 60 / 12%) 75%, rgb(20 18 60 / 0%) 100%),
-    linear-gradient(180deg, rgb(20 18 60 / 25%) 0%, rgb(20 18 60 / 0%) 35%, rgb(20 18 60 / 35%) 100%);
+    linear-gradient(90deg, rgb(20 18 60 / 80%) 0%, rgb(20 18 60 / 58%) 34%, rgb(20 18 60 / 10%) 62%, rgb(20 18 60 / 0%) 78%),
+    linear-gradient(180deg, rgb(20 18 60 / 18%) 0%, rgb(20 18 60 / 0%) 30%, rgb(20 18 60 / 0%) 75%, rgb(20 18 60 / 22%) 100%);
 }
 
 .hero-full__content {

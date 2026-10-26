@@ -10,10 +10,10 @@ import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
   // Preload the hero (LCP image) on this page only, matching the <img> srcset.
-  preload("/assets/photos/team-lounge-1280.webp", {
+  preload("/assets/photos/team-lounge-hero-1280.webp", {
     as: "image",
     fetchPriority: "high",
-    imageSrcSet: "/assets/photos/team-lounge-800.webp 800w, /assets/photos/team-lounge-1280.webp 1280w, /assets/photos/team-lounge-1920.webp 1920w, /assets/photos/team-lounge.webp 2560w",
+    imageSrcSet: "/assets/photos/team-lounge-hero-800.webp 800w, /assets/photos/team-lounge-hero-1280.webp 1280w, /assets/photos/team-lounge-hero-1920.webp 1920w, /assets/photos/team-lounge-hero-2560.webp 2560w",
     imageSizes: "100vw",
   });
   return (
@@ -21,8 +21,8 @@ export default function Home() {
       <main>
       <section className="hero-full" aria-label="Endeavor Cleaning overview">
         <img
-          src="/assets/photos/team-lounge-1280.webp"
-          srcSet="/assets/photos/team-lounge-800.webp 800w, /assets/photos/team-lounge-1280.webp 1280w, /assets/photos/team-lounge-1920.webp 1920w, /assets/photos/team-lounge.webp 2560w"
+          src="/assets/photos/team-lounge-hero-1280.webp"
+          srcSet="/assets/photos/team-lounge-hero-800.webp 800w, /assets/photos/team-lounge-hero-1280.webp 1280w, /assets/photos/team-lounge-hero-1920.webp 1920w, /assets/photos/team-lounge-hero-2560.webp 2560w"
           sizes="100vw"
           width="2560"
           height="1706"
@@ -72,7 +72,7 @@ export default function Home() {
             </div>
 
             <Link className="forest-card" href="/book?mode=quote">
-              <img src="/assets/photos/team-lounge-sm.webp" alt="Endeavor technicians deep cleaning a Dubai living room" loading="lazy" decoding="async" width="800" height="533" />
+              <img src="/assets/photos/team-arrival-sm.webp" alt="The Endeavor team arriving at a Dubai villa with professional equipment" loading="lazy" decoding="async" width="800" height="533" />
               <div className="forest-copy">
                 <span className="plant-badge" aria-hidden="true">✦</span>
                 <div>
