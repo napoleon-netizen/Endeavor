@@ -437,6 +437,12 @@ a {
   overflow: hidden;
 }
 
+/* Portrait tablets (iPad Pro, Surface): a tall, narrow screen would stretch the
+   hero to ~1000px and crop the photo hard, so follow the photo's own 3:2 shape. */
+@media (min-width: 821px) and (max-width: 1100px) and (orientation: portrait) {
+  .hero-full { min-height: 66vw; }
+}
+
 .hero-full > img {
   position: absolute;
   inset: 0;

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Commercial Cleaning Services Dubai | Offices, Facilities & Car Parks | Endeavor",
   description:
     "Planned commercial cleaning across Dubai: offices, retail, facilities, car parks and common areas. ISO-certified, insured team, flexible schedules and contract options.",
+  alternates: { canonical: "/commercial" },
 };
 
 const spaces = [
