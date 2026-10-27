@@ -11,6 +11,32 @@ type ServicePageProps = {
   params: Promise<{ slug: string }>;
 };
 
+
+// Hand-picked "You may also need" pairings: the jobs customers usually book
+// together. Falls back to same-category services for any slug not listed.
+const RELATED: Record<string, string[]> = {
+  "ac-cleaning": ["kitchen-duct-cleaning", "specialized-deep-cleaning", "water-tank-cleaning"],
+  "water-tank-cleaning": ["ac-cleaning", "bathroom-deep-cleaning", "specialized-deep-cleaning"],
+  "specialized-deep-cleaning": ["sofa-cleaning", "carpet-cleaning", "mattress-cleaning"],
+  "external-window-facade-cleaning": ["marble-polishing", "post-construction-cleaning", "specialized-deep-cleaning"],
+  "sofa-cleaning": ["carpet-cleaning", "mattress-cleaning", "specialized-deep-cleaning"],
+  "mattress-cleaning": ["sofa-cleaning", "carpet-cleaning", "bathroom-deep-cleaning"],
+  "carpet-cleaning": ["sofa-cleaning", "mattress-cleaning", "specialized-deep-cleaning"],
+  "marble-polishing": ["post-construction-cleaning", "specialized-deep-cleaning", "move-in-move-out-cleaning"],
+  "post-construction-cleaning": ["marble-polishing", "external-window-facade-cleaning", "ac-cleaning"],
+  "move-in-move-out-cleaning": ["specialized-deep-cleaning", "ac-cleaning", "water-tank-cleaning"],
+  "kitchen-duct-cleaning": ["ac-cleaning", "specialized-deep-cleaning", "bathroom-deep-cleaning"],
+  "bathroom-deep-cleaning": ["specialized-deep-cleaning", "kitchen-duct-cleaning", "water-tank-cleaning"],
+};
+
+function relatedServicesFor(slug: string) {
+  const picked = (RELATED[slug] ?? []).map((s) => services.find((item) => item.slug === s)).filter((item): item is (typeof services)[number] => Boolean(item));
+  if (picked.length === 3) return picked;
+  const category = services.find((item) => item.slug === slug)?.category;
+  const fallback = services.filter((item) => item.slug !== slug && item.category === category && !picked.includes(item));
+  return [...picked, ...fallback].slice(0, 3);
+}
+
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
@@ -79,7 +105,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       ],
     },
   ];
-  const relatedServices = services.filter((item) => item.slug !== service.slug && item.category === service.category).slice(0, 3);
+  const relatedServices = relatedServicesFor(service.slug);
 
   return (
     <SiteFrame>
