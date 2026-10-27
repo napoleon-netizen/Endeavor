@@ -21,9 +21,15 @@ export const metadata: Metadata = {
     locale: "en_AE",
   },
   icons: {
-    icon: "/assets/endeavor-logo-v1.png",
-    shortcut: "/assets/endeavor-logo-v1.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/manifest.webmanifest",
 };
 
 const localBusiness = {
