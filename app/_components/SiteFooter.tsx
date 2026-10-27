@@ -27,8 +27,8 @@ export default function SiteFooter({ locale = "en" }: { locale?: Locale }) {
         </nav>
 
         <div className="footer-contact-quick">
-          <a href={company.phoneMobileHref} dir="ltr">{company.phoneMobile}</a>
-          <a href={company.whatsappHref}>{t.whatsappUs}</a>
+          <a href={company.phoneMobileHref}>{t.callUs} <span dir="ltr">{company.phoneMobile}</span></a>
+          <a href={company.whatsappHref} target="_blank" rel="noopener noreferrer">{t.whatsappUs} <span dir="ltr">{company.whatsapp}</span></a>
         </div>
 
         <a className="footer-address" href={company.mapsUrl} target="_blank" rel="noopener noreferrer">
