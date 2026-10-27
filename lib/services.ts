@@ -770,7 +770,7 @@ export const services: Service[] = [
     summary: "Restore clarity and improve the appearance of suitable marble surfaces with a polishing plan based on the stone type, area and existing condition.",
     cardCopy: "Condition-led polishing for marble floors and selected surfaces.",
     icon: "/assets/more.webp",
-    image: "/assets/photos/marble-outdoor.webp",
+    image: "/assets/photos/marble-corridor.webp",
     priceNote: "Site assessment and quotation",
     quoteOnly: true,
     secondaryHeroCta: {
