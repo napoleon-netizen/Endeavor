@@ -54,6 +54,30 @@ export default function BookingForm({ initialService, initialPackage, initialMod
     ];
     const nextUrl = `https://wa.me/971588754060?text=${encodeURIComponent(lines.join("\n"))}`;
     setWhatsAppUrl(nextUrl);
+    // Permanent record: email the same details to the shared ECS mailbox.
+    // Fire-and-forget so the WhatsApp hand-off is never delayed or blocked.
+    void fetch("/api/booking", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      keepalive: true,
+      body: JSON.stringify({
+        requestType: isQuote ? "Exact quote" : "Booking request",
+        service: selectedName,
+        package: packageLabel,
+        quantity: String(formData.get("quantity") || ""),
+        extra: activeFields.map((field) => ({ label: field.label, value: String(formData.get(field.name) || "") })),
+        name: String(formData.get("name") || ""),
+        mobile: String(formData.get("mobile") || ""),
+        email: String(formData.get("email") || ""),
+        location: String(formData.get("location") || ""),
+        propertyType: String(formData.get("propertyType") || ""),
+        date: String(formData.get("date") || ""),
+        time: String(formData.get("time") || ""),
+        notes: String(formData.get("notes") || ""),
+        website: String(formData.get("website") || ""),
+        page: window.location.pathname + window.location.search,
+      }),
+    }).catch(() => {});
     track({
       event: "lead_submission_success",
       lead_type: isQuote ? "quote" : "booking",
@@ -145,6 +169,8 @@ export default function BookingForm({ initialService, initialPackage, initialMod
       </div>
 
       <label className="booking-form__full">Additional notes<textarea name="notes" rows={5} placeholder="Tell us about size, condition, access or any area that needs special attention." /></label>
+      {/* Honeypot: hidden from people, filled only by spam bots; the API ignores such submissions. */}
+      <label className="booking-form__hp" aria-hidden="true"><input type="text" name="website" tabIndex={-1} autoComplete="off" /></label>
       <p className="booking-photo-note">Have useful photos? Continue on WhatsApp and attach them to the prepared request.</p>
       <label className="booking-terms"><input type="checkbox" required /><span>I agree to send these details to Endeavor and understand that price, availability and access must be confirmed before the service is final.</span></label>
       <button className="booking-submit" type="submit">{isQuote ? "Continue to Exact Quote" : "Continue to Booking"}<span aria-hidden="true">→</span></button>

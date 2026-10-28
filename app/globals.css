@@ -4083,3 +4083,6 @@ a {
 }
 
 .review-card__stars-only { font-style: italic; opacity: .6; }
+
+/* Booking form honeypot (never shown) */
+.booking-form__hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
