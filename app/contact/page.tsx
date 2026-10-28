@@ -11,13 +11,27 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-const contacts = [
-  { label: "Mobile calls", value: "+971 52 959 7778", copy: "Talk through your property, timing and the service that fits best.", href: "tel:+971529597778", action: "Call mobile" },
-  { label: "WhatsApp", value: "+971 58 875 4060", copy: "Send property details, photos and questions — fastest for quotes.", href: "https://wa.me/971588754060", action: "Open WhatsApp" },
-  { label: "Office", value: "+971 4 250 8515", copy: "Reach the Dubai office directly during business hours.", href: "tel:+97142508515", action: "Call office" },
-  { label: "Visit us", value: "Office 709, Al Fattan Plaza", copy: "Airport Road, Garhoud, Dubai. Open in Google Maps for directions.", href: company.mapsUrl, action: "Get directions" },
-  { label: "Working hours", value: "Mon–Sat, 8:00 am – 8:00 pm", copy: "Sunday closed. WhatsApp enquiries sent outside these hours are answered the next working day.", href: "https://wa.me/971588754060", action: "Message us" },
-  { label: "Google Business Profile", value: "4.8 ★ on Google", copy: "See our listing, photos and customer reviews, or leave a review of your own.", href: company.googleBusinessUrl, action: "View on Google" },
+type ContactIcon = "mail" | "phone" | "whatsapp" | "pin" | "clock" | "google";
+
+function Icon({ name }: { name: ContactIcon }) {
+  const common = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
+  switch (name) {
+    case "mail": return <svg {...common}><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="M3.5 7.5 12 13l8.5-5.5" /></svg>;
+    case "phone": return <svg {...common}><path d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5L16 14l4 1.5V19a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2Z" /></svg>;
+    case "whatsapp": return <svg {...common}><path d="M4 20l1.2-3.6A8 8 0 1 1 8.4 19.3L4 20Z" /><path d="M9.5 9.3c.2 1.9 2.2 3.9 4.2 4.3l1.3-1.1 1.6.8-.4 1.5c-3.3.5-7-3.1-7.5-6.4L10.2 8l.8 1.6-1.5-.3Z" /></svg>;
+    case "pin": return <svg {...common}><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10Z" /><circle cx="12" cy="11" r="2.2" /></svg>;
+    case "clock": return <svg {...common}><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></svg>;
+    case "google": return <svg {...common}><circle cx="12" cy="12" r="8.5" /><path d="M12 8v4h4" /><path d="m9.5 15.5 5-7" /></svg>;
+  }
+}
+
+const contacts: Array<{ icon: ContactIcon; label: string; lines: string[]; href: string; action: string }> = [
+  { icon: "mail", label: "Email us", lines: [company.email], href: `mailto:${company.email}`, action: "Send an email" },
+  { icon: "phone", label: "Call us", lines: [company.phoneMobile, company.phoneOffice], href: company.phoneMobileHref, action: "Call now" },
+  { icon: "whatsapp", label: "WhatsApp", lines: [company.whatsapp, "Fastest for quotes and photos"], href: company.whatsappHref, action: "Open WhatsApp" },
+  { icon: "pin", label: "Our location", lines: ["Office 709, Al Fattan Plaza", "Airport Rd, Garhoud, Dubai"], href: company.mapsUrl, action: "Get directions" },
+  { icon: "clock", label: "Working hours", lines: ["Mon–Sat: 8:00 am – 8:00 pm", "Sunday: Closed"], href: "/book", action: "Book a visit" },
+  { icon: "google", label: "Google Business Profile", lines: ["4.8 ★ from 26 reviews", "Photos, listing and reviews"], href: company.googleBusinessUrl, action: "View on Google" },
 ];
 
 export default function ContactPage() {
@@ -38,16 +52,23 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="inner-section inner-shell contact-card-grid">
-          {contacts.map((contact, index) => (
-            <a href={contact.href} key={contact.label}>
-              <span>0{index + 1}</span>
-              <small>{contact.label}</small>
-              <h2>{contact.value}</h2>
-              <p>{contact.copy}</p>
-              <strong>{contact.action} →</strong>
-            </a>
-          ))}
+        <section className="inner-section inner-shell contact-tiles" aria-label="Ways to reach Endeavor">
+          {contacts.map((contact) => {
+            const external = contact.href.startsWith("http");
+            return (
+              <a
+                className="contact-tile"
+                href={contact.href}
+                key={contact.label}
+                {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
+                <span className="icon-tile contact-tile__icon"><Icon name={contact.icon} /></span>
+                <h2>{contact.label}</h2>
+                {contact.lines.map((line) => <p key={line} dir="ltr">{line}</p>)}
+                <strong>{contact.action} →</strong>
+              </a>
+            );
+          })}
         </section>
 
         <section className="inner-section inner-shell contact-location">
