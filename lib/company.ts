@@ -11,4 +11,11 @@ export const company = {
   whatsapp: "+971 58 875 4060",
   whatsappHref: "https://wa.me/971588754060",
   email: "info@endeavorclean.com",
+  // Verified against the existing endeavorclean.com contact page, 28 Oct 2026.
+  hoursLabel: "Mon–Sat 8:00 am – 8:00 pm · Sunday closed",
+  hours: [{ days: "Monday – Saturday", time: "8:00 am – 8:00 pm" }, { days: "Sunday", time: "Closed" }],
+  // Al Fattan Plaza, Airport Road, Garhoud.
+  geo: { latitude: 25.2411, longitude: 55.3553 },
+  // Google Business Profile — Maps entry using the same CID as the reviews links.
+  googleBusinessUrl: "https://maps.google.com/?cid=8217970638334091135",
 };

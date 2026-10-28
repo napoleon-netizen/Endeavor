@@ -34,6 +34,7 @@ export default function SiteFooter({ locale = "en" }: { locale?: Locale }) {
         <a className="footer-address" href={company.mapsUrl} target="_blank" rel="noopener noreferrer">
           {company.addressLines.join(" · ")}
         </a>
+        <p className="footer-hours">{company.hoursLabel}</p>
       </div>
 
       <div className="content-shell footer-bottom">

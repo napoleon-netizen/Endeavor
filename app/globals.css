@@ -3026,6 +3026,66 @@ a {
   font-size: 13px;
 }
 
+/* Contact tiles — soft cream cards with icon, like the previous site */
+.contact-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.contact-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 26px 26px 22px;
+  border-radius: 22px;
+  background: var(--cream);
+  border: 1px solid transparent;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.contact-tile:hover,
+.contact-tile:focus-visible {
+  outline: none;
+  border-color: var(--rust);
+  box-shadow: 0 15px 32px rgb(26 24 82 / 10%);
+  transform: translateY(-4px);
+}
+
+.contact-tile__icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.contact-tile__icon svg { color: var(--rust); width: 26px; height: 26px; }
+
+.contact-tile h2 {
+  margin: 0 0 6px;
+  color: var(--navy);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.contact-tile p {
+  margin: 0;
+  color: rgb(23 23 79 / 72%);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.contact-tile strong {
+  margin-top: auto;
+  padding-top: 16px;
+  color: var(--rust);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) { .contact-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .contact-tiles { grid-template-columns: 1fr; } }
+
 .contact-location {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -3827,6 +3887,15 @@ a {
   font-weight: 600;
   color: #fff;
   opacity: .78;
+  text-align: center;
+}
+
+.footer-hours {
+  margin: 2px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  opacity: .7;
   text-align: center;
 }
 .footer-address:hover { opacity: 1; text-decoration: underline; }
