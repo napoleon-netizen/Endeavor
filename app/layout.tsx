@@ -17,8 +17,15 @@ export const metadata: Metadata = {
     siteName: "Endeavor Cleaning Services",
     title: "Cleaning Services in Dubai | Endeavor Cleaning Services",
     description: "ISO-certified cleaning for homes and businesses across Dubai since 2014.",
-    images: [{ url: "/assets/photos/team-crew.webp", width: 2560, height: 1707, alt: "The Endeavor Cleaning team" }],
+    url: "https://endeavorclean.com",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, type: "image/jpeg", alt: "Endeavor Cleaning team deep cleaning a Dubai living room" }],
     locale: "en_AE",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cleaning Services in Dubai | Endeavor Cleaning Services",
+    description: "ISO-certified cleaning for homes and businesses across Dubai since 2014.",
+    images: ["/og-image.jpg"],
   },
   icons: {
     icon: [
@@ -38,7 +45,7 @@ const localBusiness = {
   "@id": "https://endeavorclean.com/#business",
   name: company.name,
   url: "https://endeavorclean.com",
-  image: "https://endeavorclean.com/assets/photos/team-crew.webp",
+  image: "https://endeavorclean.com/og-image.jpg",
   telephone: company.phoneMobile,
   email: company.email,
   foundingDate: "2014",
