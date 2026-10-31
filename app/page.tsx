@@ -40,7 +40,7 @@ export default function Home() {
             <a className="hero-cta hero-cta--secondary" href="https://wa.me/971588754060" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
           </div>
           <ul className="hero-trust" aria-label="Why Endeavor">
-            <li>4.8 ★ rated on Google</li>
+            <li>4.9 ★ rated on Google</li>
             <li>Since 2014</li>
             <li>ISO 9001 · 14001 · 45001</li>
             <li>Dubai Municipality approved</li>

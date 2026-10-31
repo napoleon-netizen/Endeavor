@@ -31,7 +31,7 @@ const contacts: Array<{ icon: ContactIcon; label: string; lines: string[]; href:
   { icon: "whatsapp", label: "WhatsApp", lines: [company.whatsapp, "Fastest for quotes and photos"], href: company.whatsappHref, action: "Open WhatsApp" },
   { icon: "pin", label: "Our location", lines: ["Office 709, Al Fattan Plaza", "Airport Rd, Garhoud, Dubai"], href: company.mapsUrl, action: "Get directions" },
   { icon: "clock", label: "Working hours", lines: ["Mon–Sat: 8:00 am – 8:00 pm", "Sunday: Closed"], href: "/book", action: "Book a visit" },
-  { icon: "google", label: "Google Business Profile", lines: ["4.8 ★ from 26 reviews", "Photos, listing and reviews"], href: company.googleBusinessUrl, action: "View on Google" },
+  { icon: "google", label: "Google Business Profile", lines: ["4.9 ★ from 27 reviews", "Photos, listing and reviews"], href: company.googleBusinessUrl, action: "View on Google" },
 ];
 
 export default function ContactPage() {

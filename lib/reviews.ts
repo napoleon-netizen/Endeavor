@@ -4,7 +4,8 @@
 // whose text was truncated on Google ("… More") are not included until the full
 // text is captured. Star-only reviews are shown without a quote. Every
 // review on the listing is displayed, including the 2-star one (22 Oct 2026).
-export const googleRating = { score: "4.8", count: "26" };
+// Updated 31 Oct 2026: 4.9 from 27 reviews (Godfrey Chimbalanga added).
+export const googleRating = { score: "4.9", count: "27" };
 // Opens the Google reviews panel for the Endeavor listing directly (place reference 0x3e5f6790026bbd13:0x720c18c1407e5f7f).
 export const googleReviewsUrl = "https://www.google.com/search?q=Endeavor+Cleaning+Services+Dubai+reviews#lrd=0x3e5f6790026bbd13:0x720c18c1407e5f7f,1,,,,";
 export const writeReviewUrl = "https://www.google.com/search?q=Endeavor+Cleaning+Services+Dubai+reviews#lrd=0x3e5f6790026bbd13:0x720c18c1407e5f7f,3,,,,";
@@ -22,6 +23,13 @@ export type Review = {
 };
 
 export const reviews: Review[] = [
+  {
+    name: "Godfrey Chimbalanga",
+    rating: 5,
+    service: "Interior and Exterior Window Cleaning",
+    quote: "Very good team and very polite and professional people.\nI highly recommend",
+    url: googleReviewsUrl,
+  },
   {
     name: "Anas Much",
     rating: 5,
