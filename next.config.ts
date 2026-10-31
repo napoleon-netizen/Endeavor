@@ -58,6 +58,7 @@ const oldSiteRedirects: Array<[string, string]> = [
   ["/the-deep-cleaning-and-organizing-checklist-your-path-to-a-pristine-home", "/services/specialized-deep-cleaning"],
   ["/beyond-the-surface-mastering-deep-cleaning-and-organization", "/services/specialized-deep-cleaning"],
   ["/the-deep-cleaning-and-organizing", "/services/specialized-deep-cleaning"],
+  ["/the-benefits-of-regular-marble-polishing", "/services/marble-polishing"],
   // Blog archives
   ["/category/:path*", "/services"],
   ["/tag/:path*", "/services"],
