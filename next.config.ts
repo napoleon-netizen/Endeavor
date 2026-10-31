@@ -41,6 +41,9 @@ const oldSiteRedirects: Array<[string, string]> = [
   ["/services/ac-cleaning-dubai", "/services/ac-cleaning"],
   ["/services/ac-cleaning-sharjah", "/services/ac-cleaning"],
   ["/services/water-tank-cleaning-sharjah", "/services/water-tank-cleaning"],
+  // Older service URLs still known to Google (seen in Search Console, 31 Oct 2026)
+  ["/services/ac-duct-cleaning", "/services/ac-cleaning"],
+  ["/services/deep-cleaning-services-dubai", "/services/specialized-deep-cleaning"],
   // Blog posts (the new site has no blog) → the service each post was about
   ["/eco-friendly-products-for-cleaning", "/services/specialized-deep-cleaning"],
   ["/house-cleaning-services-before-moving-in", "/services/move-in-move-out-cleaning"],
@@ -55,6 +58,7 @@ const oldSiteRedirects: Array<[string, string]> = [
   ["/the-deep-cleaning-and-organizing-checklist-your-path-to-a-pristine-home", "/services/specialized-deep-cleaning"],
   ["/beyond-the-surface-mastering-deep-cleaning-and-organization", "/services/specialized-deep-cleaning"],
   ["/the-deep-cleaning-and-organizing", "/services/specialized-deep-cleaning"],
+  ["/the-benefits-of-regular-marble-polishing", "/services/marble-polishing"],
   // Blog archives
   ["/category/:path*", "/services"],
   ["/tag/:path*", "/services"],
